@@ -1,0 +1,303 @@
+
+\chapter{Modèles microscopiques}
+
+{\em Objectifs du chapitre : redéfinir les variables thermodynamiques (pression, température, énergie interne) et réinterpréter le premier principe à travers une approche statistique basée sur un modèle microscopique. Savoir modéliser les gaz (modèle du G.P. et du gaz de Van der Waals) et les mélanges de gaz. Aborder la nature microscopique des solides et des liquides.}
+
+
+\section{Bases de la théorie cinétique}
+
+
+Dans les chapitres précédents, suivant la démarche historique, on a tenté de définir les grandeurs de la thermodynamique en se basant sur des considérations empiriques, sans référence à la nature microscopique de la matière. Cette construction est imparfaite puisque certains des concepts les plus importants (chaleur et énergie interne) ne sont définis que "par défaut". 
+
+Dans ce chapitre on présente une seconde construction de la thermodynamique, de type statistique, c'est-à-dire basée sur un modèle microscopique de la matière, considérée comme constituée d'un grand nombre de "particules élémentaires". 
+
+\paragraph{Hypothèses du modèle} :
+
+Nous présentons ici un modèle cinétique microscopique basé sur les hypothèses suivantes :
+Soit un système $\cal S$ constitué de $N$ particules "élémentaires" (ici des atomes), de masse identique $m_p$, gouvernées par la mécanique Newtonienne du point.
+La particule numéro $i$ a pour position $\vec r_i$ et vitesse $\vec v_i = d \vec r_i /dt$. On note $\vec f_{j\rightarrow i}$ les forces inter-particules, et $\vec f_{ext\rightarrow i}$ la force extérieure exercée sur chaque particule.
+On va par la suite supposer que les forces interparticules sont conservatives, c.a.d que la puissance de la force de liaison entre les particules $i$ et $j$ dérive d'une énergie potentielle $E_{p,ij}$ : 
+ 
+$$
+ \vec f_{j \rightarrow i}  \cdot \left( \vec v_i -\vec v_j\right) 
+= 
+- \frac{d}{dt} E_{p,ij}
+$$
+
+\paragraph{"Démonstration microscopique" du premier principe} :
+
+Ecrivons le PFD pour la particule $i$ : 
+
+\begin{equation}
+ m_p d \vec v_i /dt = \sum_{j \ne i} \vec f_{j\rightarrow i}  + \vec f_{ext\rightarrow i}
+ \end{equation}
+ 
+
+En prenant le produit scalaire avec $\vec v_i$ et en sommant sur toutes les particules, et en tenant compte du fait que les efforts inter-particules sont conservatifs, on obtient le théorème de l'énergie mécanique microscopique (TEM-$\mu$) pour le système $\cal S$.
+
+
+\begin{equation}
+\frac{d}{dt} \left( \sum_i \frac{m_p | \vec v_i |^2}{2} +  \sum_{\scriptsize \begin{array}{c} i,j \\ i <j \end{array}}  E_{p,ij} \right) 
+= \sum_i \vec f_{ext\rightarrow i}  \cdot  \vec v_i 
+\end{equation}
+
+Dans ce calcul, on a tenu compte de $\vec f_{j\rightarrow i}$ $= - \vec f_{i \rightarrow j}$  pour réécrire le terme correspondant aux puissances microscopiques en ne comptant qu'une fois chaque couple de particules (en intervertissant les indices muets $i$ et $j$ dans la seconde somme) :
+$$ \sum_{\scriptsize \begin{array}{c} i,j \\ i \ne j \end{array}} \vec f_{j \rightarrow i} \cdot  \vec v_i 
+= 
+\sum_{\scriptsize \begin{array}{c} i,j \\ i <j \end{array}} \vec f_{j \rightarrow i} \cdot  \vec v_i
+- \sum_{\scriptsize \begin{array}{c} i,j \\ i >j \end{array}} \vec f_{i \rightarrow j} \cdot  \vec v_i  
+=
+\sum_{\scriptsize \begin{array}{c} i,j \\ i <j \end{array}} \vec f_{j \rightarrow i} \cdot  (\vec v_i-  \vec v_j) 
+$$
+
+
+On va maintenant appliquer un traitement {\em statistique} à ce bilan d'énergie microscopique. Pour cela on décompose la vitesse et la force extérieure en une partie moyenne et une partie fluctuante :
+$$
+\begin{array}{lcl}
+\vec v_i = \vec V + \vec v_i' \qquad 
+&\mbox{ avec }&  \vec V = \frac{1}{N} \sum_{i} \vec v_i 
+\\
+\vec f_{ext \rightarrow i}  = \frac{1}{N} \vec F_{ext \rightarrow \cal S} +\vec f_{ext \rightarrow i}'
+\qquad 
+& \mbox{ avec } & \vec  F_{ext \rightarrow \cal S} 
+= \sum_{i} \vec f_{ext \rightarrow i}
+\end{array}
+$$
+En injectants ces expressions dans le (TEM-$\mu$) et en tenant compte du fait que les parties fluctuantes sont de moyenne nulle (c.a.d. $\sum_{i=1}^N \vec v_i' = \vec 0$ ; $\sum_{i=1}^N \vec f_i' = \vec 0$), on arrive à : 
+
+\begin{equation}
+\frac{d}{dt} \left( \frac{m_{\cal S}  | \vec V|^2}{2} \right)
++
+\frac{d}{dt} \left(  \frac{ N m_p v_q^2}{2} 
++  \sum_{\scriptsize \begin{array}{c} i,j \\ i <j \end{array}}  E_{p,ij} \right) 
+=  \vec F_{ext\rightarrow \cal S}  \cdot  \vec V + 
+\left(  \sum_i \vec f_{ext\rightarrow i}'  \cdot  \vec v_i' \right)
+\end{equation}
+où $m_{\cal S} = N m_p$ est la masse totale du système, et $v_q$ est par définition la 
+{\em vitesse quadratique moyenne } définie par :
+
+$$
+v_q^2 = < \left| \vec v' \right|^2 > \equiv \frac{1}{N} \sum_i { | \vec v_i' |^2} 
+$$
+
+En identifiant chacun des termes on reconnait le premier principe sous la forme :
+ 
+$$
+\frac{d E_c }{dt} + \frac{d U}{dt} = \dot W + \dot Q 
+$$
+ 
+On peut donc redéfinir les quantités intervenant dans ce bilan de la manière suivante :
+
+L'{\em énergie cinétique macroscopique} $E_c$ correspond à l'énergie cinétique calculée en fonction de la partie observable à l'échelle macroscopique du mouvement, c'est à dire la vitesse moyenne du système.
+
+L'{\em énergie interne} $U$ correspond à la somme de toutes les énergies microscopiques. Dans le modèle considéré, il y en a deux types : énergie cinétique microscopique (agitation thermique) et énergie potentielle microscopique (liaisons inter-atomes).
+
+{\em Le travail macroscopique} $W$ (plus exactement ici la puissance mécanique $ \dot W$) correspond au travail calculé en fonction des quantités observables à l'échelle macroscopique (force totale et vitesse moyenne).
+
+{\em La chaleur} $Q$ (plus exactement ici la puissance thermique $ \dot Q$) correspond à la partie non cohérente des travaux microscopiques reçus de l'extérieur.
+
+On comprend donc que les termes $U$ et $Q$ dans ce bilan proviennent du fait que la partie non cohérente du mouvement n'est pas observable à l'échelle macroscopique et ne peut être que modélisée de manière statistique.
+
+
+
+\paragraph{Théorème d'équipartition de l'énergie et température cinétique} :
+
+%Définition : moyenne statistique, vitesse quadratique moyenne.
+
+Théorème (admis) : "Dans un système constitué d'un grand nombre de constituants en interaction, chaque contribution quadratique élémentaire à l'énergie totale a, en moyenne statistique, une valeur identique qui vaut par convention $k_b T/2$ où $k_b = 1.38\times 10^{-23} J/K$ est la constante de Boltzmann et $T$ la température cinétique."
+
+Application : pour un gaz monoatomique, il y a trois  contributions quadratiques élémentaires à l'énergie cinétique microscopique (car $v_q^2 = < | \vec v'|^2>  = < v_x'^2> + < v_y'^2> + < v_z'^2>)$, donc :
+
+$$
+E_{c,micro} =  \sum_i \frac{m_p | \vec v_i' |^2}{2} = \frac{3 N k_b T}{2} = \frac{3 n R T}{2} 
+ \quad \mbox{ avec } R = {\cal N} k_B  = 8.314 J/K/mol
+ $$ 
+
+
+
+
+
+\paragraph{Discussion}
+ 
+Par rapport à l'approche phénoménologique suivie dans les chapitres précédents, l'avantage de cette seconde approche est de donner un sens physique précis à la notion d'énergie interne, qui s'interprête comme  la somme des énergies microscopiques élémentaires. L'inconvénient est de reposer sur un "modèle" supposé représenter la réalité à petite échelle, mais qui reste une construction théorique dont la validité reste à justifier par l'expérience. %On peut pousser l'approche plus loin en incorporant plus de détails dans le modèle, ou en choisissant un niveau "élémentaire" plus fin (par exemple pour inclure les effets nucléaires).  
+Cette approche n'est donc pas forcément plus "vraie" ni plus simple que la précédente mais elle donne un éclairage différent aux grandes questions de la thermodynamique...
+
+\section{Gaz parfaits}
+
+\subsection{Hypothèses} 
+En plus des hypothèses faites plus haut, on supposera : 
+
+$(i)$ la distance moyenne $d$ entre deux particules est grande devant la dimension $a$ des particules.
+(en pratique a température et pressions ordinaires $d \approx 10^{-9}m$ et $a\approx 10^{-10}m$).
+
+$(ii)$ Les interactions entre particules se limitent a des collisions : on peut donc négliger les énergies d'interaction $E_{pi,j}$ dans l'énergie totale.
+
+En outre a partir d'ici supposera de plus $\vec V = 0$ (pas de mouvement moyen).
+
+\subsection{Pression cinétique}
+
+Calculons la force moyenne (force ressentie à l'échelle macroscopique) $\vec F_{moy}$ 
+exercée par le gaz sur une paroi plane de surface $S$, en supposant que celle-ci est du uniquement aux rebonds des particules.
+
+Par définition on a : 
+$$\vec F_{moy} = \frac{1}{\Delta t} \int_t^{t+\Delta t} \vec F_{paroi \rightarrow \cal S } dt$$ 
+où la durée $\Delta t$ est grande devant la durée d'une collision $\tau$, et petite devant les autres échelles de temps.
+
+Considérons une particule $i$ subissant un impact entre $t$ et $t+\tau$. A partir des équations de la dynamique, la variation de quantité de mouvement de celle-ci vaut :
+
+$$
+m_p \Delta \vec v_i = \int_t^{t+\tau} \vec f_{paroi \rightarrow i} dt
+$$ 
+
+En sommant sur toutes les particules subissant un impact durant l'intervalle de temps $\Delta t$ 
+et en projetant selon l'axe normal à la paroi ($x$) on trouve :
+
+$$
+|\vec F_{moy}| = \frac{1}{\Delta t} \sum_{i \mbox{ impactant}}  m_p \Delta v_{x,i} \equiv N_{imp} m_p <\Delta v_{x,i}>
+$$
+
+Il faut dont maintenant estimer le nombre de particules  $N_{imp}$ subissant un impact durant  $\Delta t$, 
+et la moyenne statistique de la variation de vitesse normale $\Delta v_{x,i}$ de ces mêmes particules. 
+Le calcul rigoureux, qui nécessite de préciser la répartition des vitesses des particules (distribution de Maxwell, hors programme) conduit à :
+
+$$N_{imp} = \frac{1}{6} n_v S v_q \Delta t ; \quad <\Delta v_{x,i}> = 2 v_q$$
+
+où $n_v = N/V$ est la densité volumique de particules. On peut retrouver ce résultat a partir d'un calcul simplifié, en supposant que les particules ont toutes une vitesse de norme $v_q$, et se répartissent uniformément dans les 6 directions de l'espace. 
+
+En reportant dans l'expression de la force moyenne, on arrive finalement à  : 
+
+$$P = F_{moy}/S = n_v \frac{m_p v_q^2}{3} = n_v k_B T = n R T / V  \quad \mbox{ avec } R = {\cal N} k_B $$ 
+
+
+\subsection{Loi d'état énergétique des gaz parfaits}
+
+On a vu plus haut le principe d'équipartition de l'énergie sous la forme : 
+$$
+U = N_{ddl} \times \frac{k_b T}{2}
+$$
+où $N_{ddl}$ est le nombre de "degrés de libertés élémentaires" (plus exactement le nombre de contributions quadratiques élémentaires à l'énergie microscopique).
+ 
+\paragraph{Cas des gaz monoatomiques}
+
+Dans ce cas, $N_{ddl} = 3 N$ (3 composantes d'énergie cinétique de translation par particule). On a donc : 
+$
+U = \frac{3 N k_b T}{2} =  \frac{3 n R T}{2} 
+$
+
+On en déduit les capacités thermiques :  $C_v = 3n R/2 $ et $C_p = 5n R/2$ [ en termes massiques : $c_v = 3 r/2 $ et $c_p = 5 r/2$], ainsi que l'indice adiabatique $\gamma = 5/3$.
+
+\paragraph{Cas des gaz diatomiques}
+
+Aux températures ordinaires,  on peut considérer que $N_{ddl} = 5 N$ (3 composantes d'énergie cinétique de translation + 2 composantes de rotation par particule). On a donc : 
+$
+U = \frac{5 N k_b T}{2} =  \frac{5 n R T}{2} 
+$
+
+On en déduit les capacités thermiques :  $C_v = 5n R/2 $ et $C_p = 7n R/2$ [ en termes massiques : $c_v = 5 r/2 $ et $c_p = 7 r/2$], ainsi que l'indice adiabatique $\gamma = 7/5$.
+
+En réalité, aux basses températures $N_{ddl} \approx 3 N$ (les rotations sont inactives), et aux températures élevées $N_{ddl} \approx 7 N$ (les vibrations de la liaison interatomique rajoutent deux contributions élémentaires à l'énergie). les capacités thermiques $c_p$ et $c_v$ sont donc des fonctions croissantes de la température.
+
+\subsection{Mélanges de gaz parfait}
+
+Un mélange de gaz parfait est un gaz parfait si les espèces chimiques n'interagissent pas entre elles
+(l'énergie d'interaction $E_{p,ij}$ est nulle également si les particules $i$ et $j$ ne sont pas identiques).
+Le calcul de la pression cinétique fait plus haut se généralise au cas de plusieurs espèces. 
+On peut donc utiliser l'équation d'état sous la forme suivante. Chaque espèce $(k)$ induit une "pression partielle" $P_k = n_{tot} R T/V$, et la pression totale, s'obtient en sommant sur toutes les espèces :
+$P = n_{tot} R T/V$ , ou encore $P  = \rho r T$ avec $r = n_{tot}/ m_{tot}  = (\sum n)/(\sum M n)$, la somme étant prise sur les différentes espèces chimiques.
+
+Exemple : l'air est un mélange composé (en pourcentage massique) de $78 \%$ de diazote, $21\%$ de dioxygène, $1\%$ d'argon (et des traces de $CO_2$, $H_2 O$, etc...). Il suit les lois suivantes :
+$P = \rho r T$ ; $U = n r T/(\gamma -1)$, $H = \gamma  n r T/(\gamma -1)$ avec $r = 287 J/K/kg$, $\gamma = 1.402$  
+
+\section{Gaz réels : modèle de Van der Waals}
+
+%\subsection{Modélisation des  interactions intermoléculaires : modèle de Van der Waals}
+
+\paragraph{Potentiel de Lennard-Jones}
+
+Si le gaz devient dense, les interactions inter-moléculaires ne peuvent plus être négligées. Celles-ci sont principalement du au caractère dipôlaire des molécules (répartition de charge asymétrique). L'énergie d'interaction entre deux particules dipôlaires peut être modélisée par la loi suivante :
+
+$$
+E_{p,ij} = 2 {\cal E}_0  \left[  \frac{1}{2} {\left( \frac{d_{ij}}{r_0} \right)}^{-12} - {\left( \frac{d_{ij}}{r_0} \right)}^{-6} \right]
+$$
+
+Où $ {\cal E}_0$ et $r_0$ sont l'échelle caractéristique d'énergie et de distance associée aux molécules en question. La force associée est: 
+$$ \vec f_{j \rightarrow i} = - \vec{ \nabla}_{\vec{r_i}} ( E_{p,ij} ) 
+= -\frac{\partial E_{p,ij}}{d_{ij}} \vec n_{i \rightarrow j}  
+= \frac{12 \epsilon_0}{r_0}   \left[   {\left( \frac{d_{ij}}{r_0}\right)}^{-13} - {\left( \frac{d_{ij}}{r_0} \right)}^{-7} \right] \vec n_{i \rightarrow j}  
+$$
+
+Interprétation : les deux termes de cette loi correspondent à une force répulsive à courte distance et attractive à grande distance.
+
+\paragraph{Loi énergétique}
+
+Si le gaz n'est pas trop dense, les énergies d'interaction $E_{p,ij}$ sont globalement négatives. 
+L'énergie potentielle microscopique peut être modélisée par la loi suivante :
+$$
+E_{p,micro} = \sum_{i,j} E_{p,ij} \approx - \frac{a n^2}{V}
+$$
+où $a$ est une constante qui dépend du gaz (dimension $[a] = J. m^3. mol^{-2}$).
+
+On en déduit la loi énergétique d'un gaz de Van der Waals : 
+
+$$
+U = E_{c,micro}+ E_{p,micro} = n c_v^{(mol)} T - \frac{a n^2}{V}
+$$
+où $c_v^{(mol)}$ vaut en général $3R/2$ (gaz monoatomique) ou $5R/2$ (gaz diatomique).
+
+\paragraph{Pression cinétique et équation d'état }
+
+Par rapport au cas du gaz parfait, il faut introduire deux corrections :
+
+$(i)$ le volume $V$ doit être remplacé par $(V-nb)$ pour tenir compte du volume propre des particules.
+
+$(ii)$ La pression cinétique $P$ (exercée sur les parois) est inférieure à la pression interne $P_{int}$ (exercée au sein du gaz). On modélise cet effet par la loi :  $P = P_{int} - \frac{n^2 a}{V^2}$.
+
+On aboutit alors à l'équation d'état de Van der Waals :
+
+$$
+\left( P + \frac{n^2 a}{V^2} \right) \left( V - nb \right) = n R T
+$$
+
+Remarque : le coefficient $a$ apparaissant dans ce modèle est le même que celui apparaissant dans la loi énergétique (peut se démontrer par la relation de Mayer ; cf. chapitre 3).
+
+%Application : combustion, température de flamme et température d'explosion.
+
+\section{Modèles simples de solides et liquides}
+
+\subsection{Cas des solides}
+
+Dans un solide les atomes ne sont pas libres mais situés, en moyenne, sur les sommets d'un réseau. On peut considérer que chacun d'entre eux a une énergie potentielle de la forme suivante :
+
+$$E_{p,i} \approx  E_{p,i,0} + k | \vec X_i |^2 /2 $$
+
+où $E_{p,i,0} $ est l'énergie potentielle dans la position moyenne, $\vec X_i$  le déplacement par rapport à la position moyenne, et $k$ la "raideur" de la force de rappel qui maintient chaque atome à sa position moyenne.
+En sommant sur toutes les particules, on aboutit à la loi d'état énergétique suivante :
+
+$$
+U = E_{p,micro} + E_{c,micro} = N \left<E_{p,i,0}\right> + N  \left<k | \vec X_i |^2/2 \right> + N  \left<m_p | \vec v_i |^2/2 \right>
+$$
+On a donc 6 contributions quadratiques élémentaires par particules, ce qui permet d'aboutir à une loi d'état de la forme suivante  (loi de Dulong-Petit):
+
+$$
+U = N \left<E_{p,i,0}\right> + 6 N \frac{k_B T}{2}  \quad = n \left (u_{0,s} + 3  R T \right)
+$$
+
+Soit : $C_v =  3 n R$; $c_v = 3 r$ avec $r= R/M$ (et $C_p \approx C_v$ si la compressibilité est négligeable).
+
+\paragraph{Remarque : }
+Dans ce modèle, en prenant pour référence une énergie potentielle nulle pour les atomes "libres", la quantité  $\left<E_{p,i,0}\right>$, et donc le terme $u_{0,s} = {\cal N} \left<E_{p,i,0}\right>$ sont {\em négatifs}. Cette énergie correspond à celle qui doit être apportée pour "casser" les liaisons et vaporiser le solide. On peut donc l'identifier à l'énergie de sublimation :
+
+$$
+\Delta_{sg}  u = (u_{0,g} -  u_{0,s}) = - {\cal N} \left<E_{p,i,0}\right> \quad (> 0)
+$$
+
+\subsection{Cas des liquides}
+
+Le cas des liquides est intermédiaire entre celui des gaz et des solides : les particules sont libres de se déplacer mais liées à leur voisines par des interactions attractives qui sont constamment brisées et reformées. Il n'y a donc pas de modèle simple pour prédire les $c_p$ et $c_v$ d'un liquide (ni les énergies et enthalpies de liquéfaction et de vaporisation).
+
+
+
+
+
+
+

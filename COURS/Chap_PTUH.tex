@@ -1,0 +1,228 @@
+
+
+\chapter{Pression et température}
+
+{\em Objectifs du chapitre : 
+
+- Introduire les variables d'état de la thermodynamique, en adoptant un  point 
+de vue phénoménologique (sans référence aux mécanismes microscopiques) ;
+
+- Mettre en évidence le lien intime existant entre pression et travail, et entre température et échanges de chaleur ;
+
+- Manipuler les équations d'état et les coefficients thermoélastiques.
+}
+
+\paragraph{Définitions :}
+\footnote{Pour toutes les définitions des quatre premiers chapitres, se reporter à l'annexe A}  
+Systèmes, évolutions, variables d'état, grandeurs intensives et extensives.
+
+
+
+\section{Pression et travail de pression}
+
+{\em La pression est la grandeur intensive associée aux échanges mécaniques }.
+
+C'est une force normale par unité de surface, qui s'exerce sur les frontières d'un système, mais aussi au sein d'un système. 
+
+
+Définitions : Equilibre mécanique, évolutions quasi-statiques (ou réversibles mécaniquement),  isochores, isobares, monobares.
+
+
+
+\paragraph{Travail des forces de surface reçues par un système fluide}
+
+Cas général : travail reçu par un fluide de la part de sa surface extérieure déformable (on note $\delta \vec x$ le déplacement élémentaire, défini en chaque point de la surface)\footnote{Ici $\vec{\tau_v}$ est la contrainte visqueuse (cf. cours de Mécanique des fluides).}
+ :
+$$
+\delta W = \iint (-P \vec n + \vec{\tau_v} ) \cdot (\delta \vec x) d S  
+$$
+
+Attention, bien préciser la convention sur le vecteur normal ! (ici $\vec n$ = normale sortante).
+
+
+\paragraph{Travail de frontière déformable}
+
+
+
+
+Supposons la pression uniforme sur la surface extérieure, notée $P_s$ ; alors le travail élémentaire vaut 
+$\delta W = -P_{s} dV$.
+
+Cas particuliers :
+
+$(i)$ évolutions quasi-statiques ($P$ est uniforme et est une variable d'état) : 
+$$\delta W = -P dV$$
+
+$(ii)$ évolutions monobares ($P_s = P_{ext}$ ) : 
+$$\delta W = -P_{ext} dV$$
+
+%\paragraph{Diagramme de Clapeyron.}
+
+\paragraph{"Travail aérodynamique"}
+
+Dans ce cours on appelle Travail Aérodynamique $W_{aero}$ le travail des forces de 
+pression (et de viscosité) sur une {\em surface intérieure} au fluide, mobile mais non dilatable.
+
+Exemple ($i$) : traînée aérodynamique d'un véhicule de vitesse $\vec V$:  
+travail reçu (par le fluide) $\delta W_{aero} =  \frac{1}{2} \rho S C_x |\vec V|^2 d x$ ; puissance ${\cal P}_{aero} =  \frac{1}{2} \rho S C_x  |\vec V|^3$
+($S$ est la surface frontale du véhicule et $C_x$ son coefficient de traînée).
+
+Exemple ($ii$) : arbre en rotation (hélice, compresseur, turbine...) exerçant un couple 
+$C$ sur le fluide. Travail élémentaire reçu par le fluide : $\delta W_{aero}  = C d \theta$ ; puissance ${\cal P}_{aero} =  C \dot \theta$.
+
+{\underline Remarque :} Dans de nombreux ouvrages ce travail est appelé {\em travail utile} ($W_u$). Cette dénomination a un sens lorsqu'on s'intéresse à des machines fonctionnant en système ouvert et comportant des éléments mécaniques (turbines ou des compresseurs), car alors seul le travail échangé avec ces éléments mécaniques est utile, contrairement au travail de frontière déformable qui est inutile car échangé avec le milieu extérieur et donc non exploitable. Mais cette dénomination porte à confusion et n'est donc pas reprise dans ce cours.
+
+\section{La température}
+
+La température est {\em la grandeur intensive associée aux échanges thermiques }.
+
+En donner une définition rigoureuse sans faire référence à la réalité microscopique est un peu délicat ; considérons donc les définitions de cette section comme provisoires.
+
+
+\paragraph{Principe zéro de la thermodynamique} : $\,$
+
+Définitions :  équilibre thermique, échanges thermiques, chaleur.
+
+
+Principe zéro : {\em "Deux systèmes A,B en équilibre thermique avec un troisième système  C sont en équilibre entre eux."}
+
+Cette propriété permet de définir la {\em température}, fonction de l'état du système telle que
+si $\theta(A)=\theta(C)$ et $\theta(B)=\theta(C)$ alors $\theta(A)=\theta(B)$.
+
+Autre énoncé équivalent : {\em "Dans un système à l'équilibre thermique, la température est uniforme".}
+
+\paragraph{Thermométrie} :
+
+Définition : thermomètre.
+
+"Un thermomètre est un dispositif ayant une propriété mesurable (appelée sa grandeur thermométrique GT), 
+ dépendant uniquement de sa température, et supposé suffisamment petit pour s'équilibrer avec un 
+ système à mesurer sans interférer avec lui"
+
+%Exemples : thermomètre à colonne liquide (GT = hauteur de la colonne), thermorésistance (G.T. = résistance), thermocouple (GT = potentiel électrique). 
+ 
+Inconvénient de cette définition : l'échelle de température dépend du thermomètre...
+ 
+\paragraph{Echelles de température} : 
+ 
+Historiquement on a construit des échelles de température en fonction de la dilatation de certains liquides
+(Echelle Centigrade, Echelle Fahreneit).
+Problèmes : ces échelles sont relatives à un thermomètre donné, autorisent des valeurs négatives, et permettent uniquement d'ordonner des températures, pas de les comparer dans l'absolu.
+  
+Pour construire une échelle absolue, on a d'abord remarqué que pour tous les gaz, dans la limite des faibles densités, la quantité $PV/m = P/\rho $ varie de la même façon en fonction de l'état thermique.
+ 
+Ceci permet de  définir une {\em température absolue}, notée $T$, définie par 
+$P/\rho =  r T$, où $r$ est la constante du gaz considéré.
+
+Le choix de $r$ est fait tel que la température de l'eau à {\em son point triple} vaut $T = 273,16 K$.
+Ceci définit l'unité (Kelvin) et la valeur numérique de la constante $r$ du gaz considéré.
+
+Remarque : l'échelle Celsius est définie par $\theta(^0C) = T(K)-273.15$.
+Celle-ci coïncide de manière assez précise avec l'ancienne échelle centigrade ; en particulier sous une pression normale l'eau fond à $\theta=0^oC$ et s'évapore à $100^oC$.
+
+
+\paragraph{Définitions :} 
+
+Evolution adiabatique, isotherme, monotherme, thermiquement réversible.
+
+\section{Equation d'état}
+
+Rappels : changements de phases, diagramme ($P,T$). 
+
+=> Pour un corps pur monophasé, on peut fixer indépendamment $P$ et $T$ (système {\em divariant}).
+
+L'équation d'état  (ou équation d'état thermomécanique) est la relation donnant le volume $V$ d'une quantité donnée de matière, mesurée par sa masse $m$ ou son nombre de moles $n$
+\footnote{ Définition $(i)$ (phénoménologique) : une mole d'un corps pur est la quantité de matière 
+qui peut être mise en équivalence stoechiométrique avec $12g$ de carbone.
+Définition $(ii)$ (microscopique) : une mole représente une quantité ${\cal N}_A$ de constituants élémentaires de la matière.
+}, 
+ en fonction de $P$ et $T$. C'est à dire sous forme implicite :
+
+$$F (P,T,V) = 0$$
+
+[De manière alternative, on pourra aussi l'exprimer sous la forme  $F(P,T,\rho)=0$ ou $\rho=m/V$ est la masse volumique. Cette seconde forme a l'avantage de ne faire intervenir que des quantités intensives.]
+ %% \qquad [  \mbox{ ou }  F(P,V,\rho) = 0 \, ]$$  
+
+
+% $\rho = m/V$)
+
+%Cette équation d'état peut être soit issue de modèles théoriques (chap. 4), soit tirée de tables thermodynamiques établies expérimentalement.
+
+\paragraph{Coefficients thermoélastiques}
+
+Ces coefficients, déduits de l'équation d'état, permettent de relier les variations des trois grandeurs 
+$P,T,V$ [ou les 3 grandeurs $P,T,\rho$] :
+
+{\em Coefficient de dilatation isobare} 
+  $
+ \alpha = \frac{1}{V}\DPP{V}{T}{P}  \qquad \left[ =  -\frac{1}{\rho}\DPP{\rho}{T}{P} \right]
+ $
+ 
+{\em Coefficient de compressibilité isotherme} 
+$ 
+\chi_T = - \frac{1}{V}\DPP{V}{P}{T}\qquad \left[ = \frac{1}{\rho}\DPP{\rho}{P}{T} \right]
+$
+
+{\em Coefficient de variation de pression isochore} 
+$
+\beta = \frac{1}{P}\DPP{P}{T}{V} \qquad \left[ = \frac{1}{P}\DPP{P}{T}{\rho} \right]
+$
+
+Remarques : 
+
+$(i)$ Ces trois coefficients ne sont pas indépendants mais liés par la relation $\alpha = P \beta \chi_T$
+
+$(ii)$ $\chi_T$ est positif pour tous les corps purs, $\alpha$ est en général positif (sauf pour l'eau...) 
+
+\subsubsection{Exemples d'équations d'état}
+
+\paragraph{Gaz parfait.} On rencontrera l'équation d'état sous trois formes différentes : 
+ $$
+ PV = n R T ; \quad
+ PV = m r T ; \quad  
+ P = \rho r T.
+ $$ 
+
+Les coefficients thermoélastiques de ce modèle sont  : $\alpha = 1/T ; \quad \chi_T = 1/P ; \quad \beta = 1/T$.
+
+
+
+\paragraph{Phase condensée incompressible}
+
+Les phases condensées (solides et liquides) sont très peu compressibles  ($\chi_T \approx 10^{-10} Pa$ )  est faiblement dilatables ($\alpha \approx 10^{-4} K^1$), on peut donc souvent utiliser un modèle du type 
+
+$$
+V= V(T) \quad [ \mbox{ ou }  \rho = \rho(T) \, ]
+$$ 
+
+
+Les coefficients thermoélastiques associés à ce modèle sont :
+$\alpha \ne 0 ; \quad \chi_T = 0 ; \quad \beta = \infty$
+
+On se contentera souvent d'une approximation linéaire, sous la forme $V(\theta) = V_0 ( 1 + a \theta) 
+$ [ ou $\rho(\theta) = \rho_0(1-a \theta)$ ] où $\theta = T-T_0$ est la température relative dans une échelle précisée (attention non valide pour l'eau autour de $4^oC...$).
+
+
+\paragraph{Phase condensée incompressible, indilatable}
+
+Si l'on peut négliger la dilatabilité, on aboutit à une équation d'état très dégénérée :
+$
+V = V_0 \quad [ \mbox{ ou } \rho =  \rho_0 \, ]
+$
+
+Les coefficients thermoélastiques  sont  :
+$\alpha = 0 ; \quad \chi_T = 0 ; \quad \beta  \mbox{ indéterminé}.$
+
+
+
+
+
+
+
+
+
+
+
+%\chapter{Modèles microscopiques : théorie cinétique des gaz}
+
+

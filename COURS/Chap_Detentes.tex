@@ -1,0 +1,216 @@
+
+
+\chapter{Détentes et compressions}
+
+{\em 
+Objectifs du chapitre : Connaître et savoir traiter les principaux types de détentes et compressions, 
+dans le cas de gaz parfaits ou réels. Comprendre les conditions de la réversibilité.
+}
+
+\section{Conditions de la réversibilité}
+
+\subsection{Définitions (et rappels)}
+Une transformation est {\em réversible} si chaque étape intermédiaire est un état d'équilibre. Cela implique que les variables intensives soient uniformes à chaque instant : pression uniforme (transformation réversible mécaniquement ou quasi-statique), et température uniforme (transformation réversible thermiquement).
+
+\subsection{Classification des transformations selon l'échelle de temps}
+
+Etudions un système (solide ou fluide sans convection interne) de dimension caractéristique $L$ subissant  une transformation, pilotée par la variation de la pression $P_s$ et/ou la température $T_s$ sur (au moins une partie de) sa frontière. Dans quelles conditions peut-on considérer cette transformation comme réversible ? Pour répondre il faut comparer la durée caractéristique $\tau$ de l'évolution avec deux échelles de temps importantes :
+
+\begin{description}
+\item{Temps caractéristique d'équilibrage mécanique :} $\tau_m = L /c$ où $c$ est la vitesse du son. 
+C'est le temps mis par une onde acoustique pour faire un aller-retour dans le système (et propager en son sein l'information d'une variation de pression provenant de la surface).
+
+\item{Temps caractéristique d'uniformisation thermique :} $\tau_u = L^2 /a$ où $a$ est la diffusivité thermique. C'est le temps caractéristique mis par les flux de chaleurs pour diffuser dans le système (cf. chapitre 6).
+\end{description}
+
+En pratique $\tau_m \ll \tau_u$, il faut donc distinguer 4 cas :
+
+\begin{description}
+\item{Cas $(i)$ :} $\tau = {\mathcal O} (\tau_m) $.
+La transformation est {\em adiabatique} et {\em irréversible}. 
+Exemple : détente de Joule-Gay-Lussac.
+
+\item{Cas $(ii)$ :} $\tau_m \ll  \tau \ll \tau_u $.
+La transformation est {\em adiabatique} et {\em réversible}. En effet les échanges thermiques n'ont, au cours de la durée sur laquelle est considérée la transformation, pas le temps de faire varier la température du système (hormis dans une mince couche de surface), on peut donc considérer cette dernière comme uniforme. Voir section B.3.
+
+\item{Cas $(iii)$ :} $\tau = {\mathcal O} (\tau_u) $.
+La transformation est {\em non adiabatique} et {\em  irrréversible}. 
+Exemple : refroidissement isobare d'un objet avec $Bi = {\mathcal O}(1)$ (chap. 6).  
+
+\item{Cas $(iv)$ :} $\tau = {\mathcal O} (\tau_u) $.
+La transformation est {\em non adiabatique} et {\em  réversible}. 
+Exemples : détente isotherme (section B.4) ; refroidissement isobare d'un objet avec $Bi = \ll 1$ (chap. 6).  
+\end{description}
+
+L'hypothèse d'une transformation réversible est donc justifiée dans deux cas, mais pour des raisons très différentes :
+
+- Dans le cas $(ii)$ l'évolution est trop rapide pour que la diffusion thermique ait le temps de faire varier la température du système (hormis dans une mince couche de surface) ; on peut donc considérer que cette dernière reste uniforme au cours de l'évolution (mais peut varier au cours du temps sous l'effet de la variation de pression imposée). 
+
+- Dans le cas $(iv)$ l'évolution est très lente, les échanges thermiques ont tout le temps nécessaire pour avoir lieu et assurer l'uniformisation de la température.
+
+\section{Diagramme de Clapeyron}
+
+C'est le diagramme $(P-V)$ permettant de décrire l'évolution d'un système entre un état initial $(P_i,V_i)$ et un état final $(P_f,V_f)$.
+
+Remarques :
+
+- Ce diagramme n'a de sens que pour les transfos mécaniquement réversibles (cas $ii$ à $iv$). 
+
+- Permet de calculer le travail reçu par le système. $W = - \int P dV$. En effet $|W|$ est l'aire sous la courbe représentant l'évolution (attention au signe !).
+
+- Pour un {\em cycle} le travail net  $|W|$ est l'aire sous la courbe ; celui-ci est positif (reçu) si le cycle est décrit en sens anti-horaire ; il est négatif (fourni) si ce dernier est décrit en sens horaire.
+
+ 
+\section{Principaux types d'évolutions}
+
+\subsection{Evolutions isochores}
+ 
+Ce sont des échauffements ou des refroidissements sans changement de volume (paroi indéformable).
+L'étude énergétique se résume à un bilan d'énergie interne (cf. chapitres 1 et 3) :
+
+$\Delta U = Q$  
+
+Si l'on dispose d'une loi d'état énergétique sous la forme $U(T,V)$ de nature phénoménologique (chap. 3) ou microscopique (chap. 5), on peut calculer simplement la variation de température.
+
+
+
+\subsection{Evolutions monobares (incluant le cas isobare)}
+ 
+Ce sont des échauffements ou des refroidissements au contact mécanique d'un milieu de pression uniforme ("à l'air libre" ou "au contact d'un piston parfaitement mobile").
+Pour l'étude énergétique il est judicieux d'employer un bilan d'enthalpie (chap. 3) :
+
+$\Delta H = Q$  
+
+Si l'on dispose d'une loi d'état énergétique sous la forme $H(T,P)$ on peut calculer simplement la variation de température.
+
+
+\subsection{Détente ou compression {\em adiabatique réversible}}
+
+\paragraph{Relations de Laplace} :
+
+On se limite ici au cas d'un {\em gaz parfait thermiquement parfait} ($c_v$ et $c_p$ sont des constantes).
+On montre que les variables d'état au cours de la transformation sont reliées par les {\em relations de Laplace}, qui peuvent s'énoncer sous 3 formes différentes :
+
+$$
+\mbox{ (1ère forme) }  P V^{\gamma} = Cte  ;  \qquad 
+\mbox{ (2ème forme) }   T V^{\gamma-1} = Cte  ;  \qquad 
+\mbox{ (3ème forme) }  P^{1-\gamma} T^{\gamma} = Cte . 
+$$ 
+
+\paragraph{Démonstration} :
+
+Pour étudier la transformation globale il est nécessaire d'étudier tout d'abord une {\em évolution élémentaire} entre les états ($P,V,T$) et ($P+dP,V+dV,T+dT$). 
+
+On écrit d'une part le bilan d'énergie interne : $dU = \delta W = - P dV$
+
+D'autre part $dU = C_v dT$ 
+
+En combinant ces deux équations, et en utilisant l'équation d'état et la relation $nR/C_v = \gamma-1$, on arrive à :
+
+$$
+\frac{dT}{T} = (\gamma-1) \frac{dV}{V}
+$$
+
+Dont l'intégration aboutit à la seconde forme de la relation de Laplace. Les deux autres formes s'obtiennent en combinant celle-ci avec l'équation d'état.
+
+\paragraph{Application } :
+
+Notons $\tau_V = V_i/V_f$ le taux de compression ($\tau_V>1$ pour une compression ; $\tau_V<1$ pour une détente). Alors la pression et la température finale, ainsi que la variation d'énergie et le travail reçu valent :
+
+$$
+P_f = P_i \tau_V^{\gamma} ; \qquad T_f = T_i \tau_V^{\gamma-1} ; \qquad \Delta U = W = C_v T_i [ \tau_V^{\gamma-1} - 1 ].
+$$
+
+
+
+%\paragraph{Discussion } :
+
+%Si la durée $\tau$ de l'évolution est imposée par la machine considérée, le critère permettant de supposer qu'une transformation est réversible adiabatique a été énoncée plus haut. Qu'en est-il d'une détente spontanée ? ()
+
+
+
+
+
+
+
+
+\paragraph{ Remarques } : 
+
+- Diagramme de Clapeyron : "courbes adiabatiques" $P \approx V^{-\gamma}$
+
+- Au cours d'une compression adiabatique, bien que le gaz ne reçoive pas de chaleur, la température augmente ! Interprétation microscopique : au cours d'un rebond sur un piston en mouvement les particules sont accélérées...
+
+
+- Les relations de Laplace sont valables uniquement pour les {\em gaz parfaits thermiquement parfaits}, mais peuvent se généraliser pour des gaz suivant des lois d'état plus générales (cf. TD).
+
+\subsection{Détente ou compression {\em isotherme}}
+
+\paragraph{Cas d'un gaz parfait} : 
+
+Notons de nouveau $\tau_V = V_i/V_f$ le taux de compression. $U$ ne dépendant que de $T$, on a $\Delta U=0$; en revanche $W$ et $Q$ ne sont pas nuls mais se compensent exactement ! Le calcul du travail donne :
+$$
+W =   - \int P dV = n R T \ln \tau_V  \qquad (= -Q)
+$$
+
+\paragraph{Cas d'un gaz réel} : 
+
+Dans le cas général au cours d'une évolution isotherme le travail et la chaleur ne se compensent pas exactement, cependant leurs signes restent donnés par le critère suivant :
+
+- Pour une compression ($\tau_V>1$) $W>0$ et $Q<0$ ;
+
+- Pour une détente ($\tau_V<1$) $W<0$ et $Q>0$. 
+
+\paragraph{Remarque : } suivant la discussion de la section A les transformations isothermes sont en général des transformations "très lentes", ces conditions sont peu souvent rencontrées en pratique !
+
+\subsection{Détente de Joule-Gay-Lussac ou iso-énergie}
+\paragraph{ Description :} 
+Un récipient calorifugé est séparé en deux par une cloison (ou une vanne) ; une moitié contient un gaz, l'autre est vide. On brise la cloison (ou on ouvre la vanne). Le gaz se détend pour occuper tout le volume disponible. 
+
+Le travail et la chaleur étant nuls, l'énergie est conservée ($\Delta U = 0$).
+
+\paragraph{Pour un gaz parfait} $U = U(T)$ donc la température ne varie pas.
+
+\paragraph{Pour un gaz réel} en général $\Delta T <0$ ; la température diminue. Pour calculer cette augmentation on peut utiliser la différentielle de l'énergie $U(T,V)$ :
+$$ 
+dU = C_v dT + (\ell - P) dV \quad \mbox{ donc } dT = \frac{ P - \ell}{C_v} dV.
+$$ 
+%Exemple du gaz de VdW avec $(\ell -P) = a n^2 /V^2$. 
+
+\subsection{Détente de Joule-Thomson ou isenthalpique }
+ 
+\paragraph{ Description :} 
+Un fluide s'écoule dans un circuit calorifugé comportant un élément générant une forte perte de charge (goulot d'étranglement, serpentin, ou milieu poreux). On note $(P_e,T_e,\upsilon_e)$ les conditions en entrée, $(P_s,T_s,\upsilon_s)$ les conditions en sortie, et $\dot m$ le débit massique.
+
+En entrée et en sortie la section est large et l'énergie cinétique négligeable.
+
+Pendant une durée $\Delta t$, la chaleur reçue est nulle ; le travail reçu vaut $W =  (P_e \upsilon_e  - P_s \upsilon_s) \dot m \Delta t$ et la variation d'énergie vaut $\Delta U = (u_s - u_e)  \dot m \Delta t$. On a donc :
+
+$$  \dot m \Delta t ( h_s - h_e) = \Delta H = 0 $$
+
+\paragraph{Pour un gaz parfait} $H = H(T)$ donc la température ne varie pas.
+
+\paragraph{Cas général} On peut calculer la variation de température a partir de la différentielle de l'enthalpie $H(T,V)$ :
+$$ 
+dH = C_p dT + (K + V) dP \quad \mbox{ donc } dT = - \frac{K+V}{C_p} dP.
+$$ 
+Pour les liquides $K \ll V$, donc une détente de J-T conduit à une élévation de température.
+ 
+Pour de nombreux gaz réels, le terme $(K+V)$ est négatif aux températures ambiantes :
+une détente de J-T conduit donc à une baisse de température. Cette propriété est à la base de nombreux procédés de refroidissement industriels.
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

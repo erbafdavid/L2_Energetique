@@ -1,0 +1,294 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[francais]{babel}		% typographie française (french marche aussi)
+%\usepackage[mac]{inputenc}		% lettres accentuées pour Mac
+\usepackage[T1]{fontenc}		% lettres accentuées pour Linux
+\usepackage{color}                      % Pour pstex / pngtex ( xfig ) 
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyheadings}  
+\usepackage{mathrsfs}
+\usepackage{fancyheadings}
+\usepackage{inputenc}
+\usepackage{color} 
+\usepackage{epsfig} 
+\usepackage{latexsym}
+ 
+ 
+ 
+% De chez pierre
+
+\setlength{\topmargin}{-20mm}
+\setlength{\textwidth}{17cm}
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\evensidemargin}{-0.5cm}
+\setlength{\textheight}{25.5cm}
+
+
+\def \ben {\begin{enumerate}}
+\def \een {\end{enumerate}}
+% marge gauche (im)paire = 1in. + x1mm
+%\setlength{\evensidemargin}{-5mm} % book : marge gauche paire = 1in. + x2mm
+
+\newcommand{\dd} {\textrm d}   
+\newcommand{\im} {\mathrm i}   
+\newcommand{\e}  {\textrm e}   
+\newcommand{\dpa}[2]  {\frac {\partial #1} {\partial #2}}   
+\newcommand{\ddpa}[2] {\frac {\partial^{2} #1} {\partial #2 ^{2}}}   
+\newcommand{\dto}[2]  {\frac {{\rm d} #1} {{\rm d} #2}}   
+\newcommand{\ddto}[2] {\frac {\textrm{d}^{2} #1} {\textrm{d} #2 ^{2}}}
+\newcommand{\comment}[1]{ }
+
+\newcommand{\DPP}[3]{
+\displaystyle \left( \frac{\partial #1 }{\partial #2} \right)_{#3}
+}
+
+\newcommand{\torseur}[5]{
+\Biggl\{ {\cal #1} (#2)\Biggr \} = 
+\left \{ \begin{array}{c}
+#3  \\
+#4 
+\end{array} \right\}_{#5} 
+}
+    
+\newcommand{\tenseursym}[6]{
+\left \{ \begin{array}{ccc}
+#1 & #4 & #5  \\
+#4 & #2 & #6  \\
+#5 & #6 & #3  \\ 
+\end{array} \right\}
+}
+
+
+
+\graphicspath{{../FIGURES/}}
+\setlength{\unitlength}{1cm}
+
+%\includeonly{Rayonement}
+%------------------------------------------------------------------------------
+\begin{document}                                          
+
+
+
+
+%\markboth{\textsc{Fiches de cours de thermo}}{ \textsc{D. Fabre, Université Paul Sabatier, 2012}}
+\markboth{\textsc{Fiches de cours de thermo} \hfill \textsc{D. Fabre, Université Paul Sabatier, 2012}}
+{\textsc{Fiches de cours de thermo} \hfill \textsc{D. Fabre, Université Paul Sabatier, 2012}}
+\pagestyle{headings}
+%\renewcommand\thepage{}
+
+
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+
+
+
+
+\begin{titlepage}
+\noindent
+\textsc{Université Paul Sabatier} \hfill \textsc{Année 2015/16} \\
+\noindent
+\textsc{L2 Mécanique, Energétique et Physique} \hfill 
+\textsc{Energétique}
+\vspace{1cm}
+\begin{center}
+\underline{\underline{\hspace{10cm}}}        \\ \vspace{5mm}
+\textbf{\LARGE Notes de cours} \\ \vspace{2mm}
+\textbf{\LARGE Introduction à la thermodynamique et aux transferts thermiques } \\ \vspace{2mm}
+\underline{\underline{\hspace{10cm}}}
+\end{center}
+\vspace{1cm}
+\begin{center}
+\end{center}
+\vspace{0cm}
+\begin{flushright}
+\large \sl
+David Fabre 
+\end{flushright}
+\setcounter{tocdepth}{0}
+\tableofcontents
+\pagestyle{empty}
+\end{titlepage}
+
+
+%\pagestyle{empty}
+%{\it  \cal V}
+
+%$\it \mathcal V$
+%$\it \vee$
+
+
+
+
+\include{Chap1_Principes}
+
+\include{Chap_PTUH}
+
+\include{Chap_Enthalpie}
+
+\include{Chap_Micro}
+
+\include{Chap_PhaseChim}
+
+\include{Chap_Chaleur}
+
+\include{Chap_Detentes}
+
+\include{Chap_Cycles}
+
+
+%\include{Chap_Entropie}
+
+
+%\clearpage
+
+
+\appendix
+
+
+\include{Appendix_Lexique}
+
+
+
+%\chapter{Rappels mathématiques}
+
+\chapter{Unités et ordres de grandeur}
+
+
+%%%\section{Unités et ordres de grandeur}
+
+\section{Unités}
+
+\paragraph{Unités d'énergie}
+
+Unité officielle d'énergie : le Joule  ($1 J = 1 kg m^2  s^{-2}$). 
+
+Multiples habituels : $1 kJ = 10^3 J$ ; $1 MJ = 10^6 J$, $1 GJ = 10^9 J$, ...
+
+Autres unités : 
+
+l'électron-volt ($1 eV = 1.602 176 53 \times 10^{-19} J$), 
+
+le kiloWattheure ($1 kWh = 3600 kJ$),
+
+la tonne équivalent pétrole ($1t.e.p. = 41.86 GJ = 11628 kWh$),
+
+la calorie ($1cal = 4.1868 J$). 
+
+Attention pour les nutritionistes 1 "grande Calorie" = 1 kcal = 1000 calories !
+
+
+\paragraph{Unités de puissance}
+
+
+La variation temporelle d'énergie (ou flux d'énergie par unité de temps) s'appelle puissance.
+Unité légale : le Watt ($1 W = 1 J/s = 1 kg m^2 s^{-3}$).
+
+Autre unité : le cheval-vapeur (en France $ 1 cv = 735.7 W$ ; aux USA $ 1 hp = 745.7W$).
+
+{\em Remarque :} le "cheval fiscal" est une unité de "puissance fiscale" définie par 
+$$
+P_{[fisc]} = \frac{[CO_2]}{45} + \left( \frac{P}{40} \right)^{1.6}
+$$
+où $[CO_2]$ est la quantité de $CO_2$ émise en $g/km$ et $P$ la puissance nominale mesurée sur un banc-moteur.
+ Pas très scientifique....
+
+
+\section{Ordres de grandeur}
+
+\paragraph{Quelques situations de la vie courante}
+
+Eclairage d'une pièce : $15 W$ avec une ampoule fluo-compacte (ou $100W$ avec une halogène).
+
+Ordinateur portable : $50 W$.
+
+Mobilette : $1kW$.
+
+Automobile a $100 km/h$ (type 106) : $10 kW$ (7 pour les 
+frottements de l'air, 3 pour les frottements mécaniques). 
+Remarque : $2kW$ de plus si climatisation réglée au max... 
+
+Centrale nucléaire : $2GW$.
+
+\paragraph{Pouvoir calorique de quelques combustibles}
+
+
+1 kg pétrole = $42 MJ$.
+
+1 $m^3$ (soit $0.8 kg$) de gaz naturel = $42 MJ$.
+
+1 kg charbon = $28 MJ$.
+
+1 kg bois sec = $14 MJ$.  
+
+$1g$ d'uranium = $72,6 GJ$, soit autant que 1,7 tonnes de pétrole !
+
+\paragraph{Valeur énergétique de quelques aliments}
+
+Les nutritionnistes appellent "Valeur énergétique" des aliments leur pouvoir calorifique.
+ 
+Glucides 4kcal/g = 17kJ/g ; protéines 4kcal/g=17kJ/g ; lipides 9kcal/g=38kJ/g.
+
+$100g$ de bifteck = $200 kcal$ ; $100 g$ de carottes = $38 kcal$ ; 1 pomme = $52 kcal$ ;  1 Mars$^{TM}$ = $226 kcal$ ; 1 coca = $140 kcal$.
+
+
+Ration énergétique quotidienne conseillée : $2 800 kcal$ (hommes) /  $2 200 kcal$ (femmes).
+
+\paragraph{Activités humaines}
+On appelle Métabolisme la quantité d'énergie "brûlée" par l'organisme par unité de temps (somme de la puissance musculaire et de la puissance thermique générée).
+
+Métabolisme d'un adulte au repos : $80W$ (intégralement sous forme de puissance thermique). 
+D'un cycliste amateur : $500W$ dont $100W$ de puissance musculaire. D'un sprinter : $4000W$ dont  $1000W$ de puissance musculaire.
+
+
+\paragraph{A l'échelle de la planète}
+
+Flux de rayonnement solaire reçu sur terre :  
+$1kW$ par $m^2$ de surface orientée face au soleil ($1.353 kW/m^2$ au dessus de l'atmosphère).
+
+Flux total de rayonnement solaire reçu par la terre : $1.7 \times 10 ^{17} W$.
+
+Energie "primaire" consommée annuellement par l'humanité : 
+13 milliards de t.e.p  par an (soit une puissance moyenne de $1.6 \times 10 ^{13} W$).
+
+
+
+\chapter{Constantes fondamentales}
+
+\begin{tabular}{|l|l|}
+\hline
+Désignation & Valeur \\
+\hline
+Vitesse de la lumière & $c = 2 9 9 7 9 2 4 5 8 m \cdot s^{-1}$ 
+\\ 
+Constante de planck & $h = 6,62606957 \times 10^{34} J \cdot s$
+ \\
+Constante de gravitation & ${\cal G} = 6,67384 \times 10^{-11} N \cdot m^2 \cdot kg^{-2}$ 
+\\
+Constante de Boltzmann & $k_B =  1,3806488 \times 10^{-23} J \cdot K^{-1}$  
+\\
+Nombre d'Avogadro & ${\cal N} = 6.02214129 \times 10^{23} mol^{-1}$ 
+\\
+Constante des gaz parfaits & $R = {\cal N} k_B = 8.3144621 J \cdot K^{-1} \cdot mol^{-1}$ 
+\\
+Constante de Stefan-Boltzmann & $\sigma = 5.670373 \times 10^{-8} W \cdot K^{-4} \cdot m^{-2} $ 
+%\quad $( = 2 \pi^5 k_B^4 /[15 h^3 c^2]$ )
+\\
+Constante de Wien & $B = 2,897 772 \times 10^{-3} m \cdot K$
+\\
+\hline
+\end{tabular}
+
+
+
+
+\include{Appendix_Programmes}
+
+
+\include{Appendix_Biblio}
+
+
+\end{document}
+

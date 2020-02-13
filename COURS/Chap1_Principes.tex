@@ -1,0 +1,581 @@
+
+\chapter{Introduction à la  thermodynamique}
+
+
+{\em Objectifs du chapitre : 
+
+Situer les enjeux et l'histoire de la science thermodynamique.
+
+Introduire les principes de la thermodynamique (de manière qualitative) et la notion d'équation-bilan
+d'une grandeur conservative.
+
+Faire la synthèse des notions d'énergétique vues dans les enseignements précédents de physique, mécanique et électricité.
+}
+
+
+\section{Définitions et histoire de la thermodynamique}
+
+%%% REVOIR L'ANNEE PROCHAINE
+%\subsection{La mécanique et la thermique avant 1830}
+%\subsection{Une nouvelle science : la thermodynamique}
+
+
+La thermodynamique, est une science qui s'est constituée au 18ème siècle en englobant 
+la mécanique et la théorie de la chaleur. Plus tard elle s'est étendue pour intégrer toute la physique.
+
+Plus qu'une science monolithique, c'est plutôt une approche générale applicable à tout système, qui privilégie l'utilisation d'équations-bilan pour des évolutions entre états d'équilibre successifs,
+plutôt que des équations d'évolution (démarche plus habituelle en mécanique).
+
+
+
+%\subsection{Ancienne théorie de la chaleur}
+
+%A cette époque la nature de la matière est inconnue (l'hypothèse atomique est controversée). La théorie des transferts de chaleur est formalisée de manière mathématique (Joseph Fourier) mais la nature même de la chaleur reste mystérieuse. Théorie du "calorique" : "fluide subtil sans masse" imprégnant intiment la matière.
+
+% se manifestant sous trois formes :
+%\begin{itemize}
+%\item "Chaleur sensible" : quantité de chaleur dépendant de la température
+%\item "Chaleur lattente" : 
+%\item "Chaleu
+%\end{itemize}
+
+%Malgré ses succès pour expliquer des phénomènes thermiques simples, cette théorie peine à rendre compte des situations mêlant phénomènes thermiques et mécaniques.
+
+
+
+
+
+\subsection{Thermodynamique phénoménologique}
+
+
+Contexte : première moitié du 19e siècle, inventions des machines à vapeur.
+
+A cette époque la nature de la matière est inconnue (l'hypothèse atomique est controversée).
+La théorie des transferts de chaleur est formalisée de manière mathématique (Joseph Fourier) mais 
+la nature même de la chaleur reste mystérieuse (hypothèse du "fluide calorique").
+
+La thermodynamique phénoménologique est construite comme une théorie englobant la mécanique
+et les transferts de chaleur. C'est une approche pragmatique bâtie sur des concepts mesurables 
+à l'échelle macroscopique, et ne nécessite pas d'hypothèse sur la réalité microscopique. La théorie
+postule l'existence de plusieurs {\em fonctions d'état}, les principales étant l'énergie interne et l'entropie, 
+dont la nature n'est pas explicitée et dont seules les variations sont observables.
+
+Cette première théorie thermodynamique est alors {\em la science des machines thermiques}.
+Plus tard elle englobera l'électricité,  la chimie, puis l'ensemble de la physique. 
+(figures principales : Sadi Carnot, James Joule, Lord Kelvin, Rudolf Clausius).
+
+\subsection{Thermodynamique statistique}
+
+Cette seconde approche complémentaire à la précédente est élaborée au cours de la seconde moitié du 19e siècle (Boltzmann). Elle vise a appuyer la théorie thermodynamique sur des concepts microscopiques.
+La théorie prend alors un caractère statistique : la température, l'entropie sont réinterprétés comme
+des moyennes statistiques sur un grand nombre de particules. La pertinence de cette approche tient au nombre formidable
+de particules élémentaires qui rend impossible une résolution exacte des équations microscopiques 
+(1 mole, quantité "macroscopique" de matière, contient $\cal N$ $=6.02\cdot 10^{23}$ molécules !). 
+
+La thermodynamique devient donc la {\em science des grands systèmes en équilibre}.
+Plus tard cette approche microscopique devra être étendue pour inclure des concepts issus
+de la mécanique quantique.
+
+\section{Les principes de la thermodynamique}
+
+Historiquement on retient deux principes centraux, auxquels on adjoint dans certains ouvrages le "principe zéro" (permettant de définir la température, cf. chapitre 2) et le "troisième principe" seulement utile aux basses températures (hors programme). 
+
+
+\subsection{Premier principe}
+
+Le premier principe stipule que l'énergie totale (notée $\cal E$), définie comme la somme de toutes les énergies macroscopiques (mécanique, électrique, etc...) et de l'énergie interne (notée $U$), dont l'existence est supposée,
+est une quantité {\em conservative}.
+
+%Explication ; exemples de grandeurs conservatives et non conservatives.
+
+%{\em Conservative} = dont les variations sont uniquement dues aux échanges avec l'extérieur.
+
+Dans le cadre de la physique classique (<Einstein 1905), il existe 4 grandes lois de conservation : masse, charge électrique, quantité de mouvement, et énergie. Cette dernière est la plus difficile à appréhender (Image des "cubes" de Feynman).
+
+%Intérêt d'un principe de conservation par rapport à une loi d'évolution : on se contente d'un bilan entre un état initial et un état final, pas la peine de connaitre les étapes intermédiaires. (Image du fou sur l'échiquier de Feynman).
+
+%Contentons nous pour l'instant d'une définition négative :
+%L'énergie interne (notée $E$ ou $U$) est une énergie non associée au mouvement, 
+%ni aux forces conservatives. 
+%(cad. dont on peut établir un bilan, cf. chapitre 4) appelée énergie totale, notée $\cal E$.
+
+%Définition : quantité conservative = dont on peut établir des bilans.
+
+L'énergie s'échange sous deux formes principales : travail et chaleur, ce qui pose un cadre théorique commun pour décrire le fonctionnement de machines thermiques, et définir de manière cohérente leur rendement.
+On admet pour l'instant la définition intuitive suivante : travail = "ce qui permet de faire bouger", 
+chaleur = "ce qui permet de chauffer".
+
+
+%On verra par la suite une définition plus précise issue de la thermodynamique statistique  :
+%l'énergie interne est la somme de toutes les énergies microscopiques.
+
+
+Remarque : le premier principe ne fait pas de distinction entre l'état initial et l'état final (cad entre passé et futur) et abolit ainsi la variable "temps".
+
+\subsection{Second principe}
+
+
+En pratique les évolutions "réelles" ne sont en général pas {\em réversibles} (ce mot est ici pris dans un sens intuitif signifiant que l'on ne peut pas "renverser" l'évolution en "faisant tourner le film à l'envers" ; une signification plus rigoureuse du concept de réversibilité sera donné plus tard).
+
+D'autre part les conversions entre travail et chaleur ne sont pas symétriques : les conversions (travail -> chaleur) sont courantes et spontanées tandis que les conversions (chaleur -> travail) nécessitent des machines thermiques dont le rendement est limité.
+
+Il faut donc adjoindre un second principe qui "réintroduit la flèche du temps" (cad distingue passé et avenir) et introduit une hiérarchie entre travail et chaleur.
+
+L'expression de ce principe a d'abord été qualitative. Retenons trois énoncés historiques :
+\begin{description}
+
+\item{\bf Enoncé historique de Clausius :} "La chaleur ne peut passer spontanément d'un corps froid à un corps chaud".
+
+\item{ \bf Enoncé historique de Thomson (ou de Kelvin) :} "Un système qui, au cours d'un cycle, échange de la chaleur avec un milieu extérieur de température uniforme, ne peut fournir du travail". 
+
+\item{ \bf Enoncé historique de Carnot :} Celui-ci, plus couramment appelé "théorème de Carnot", précise le rendement maximum des machines thermiques (voir chapitre "cycles thermodynamiques").
+\end{description}
+
+On montrera que tous ces énoncés sont équivalents entre eux, et se déduisent de l'énoncé mathématique
+"moderne" du second principe, qui fait appel à une fonction d'état appelée entropie.
+
+
+
+\section{Rappels : notions vues dans les années précédentes}
+
+(cf. annexe "Rappel des programmes" ) .
+
+\subsection{Rappels de mécanique des solides}
+
+
+Le cas général d'un solide indéformable a été vu au semestre précédent. On se contente ici de deux cas particuliers importants : le point matériel et 
+le solide en rotation autour d'un axe fixe (SRAX).
+
+\subsubsection{Energie cinétique, travail et puissance}
+
+Cas d'un point matériel (ou d'un solide en translation pure) soumis à une force $\vec F$ :
+
+$E_c = 1/2 m | \vec V | ^2$ ; \quad $W = \int \vec F \cdot d \vec x$ ;  \quad ${\cal P }_{méca} = \vec F \cdot \vec V$
+
+Cas d'un solide en rotation autour d'un axe fixe (SRAX) soumis à un couple $C$ : 
+
+$E_c = 1/2 I \dot \theta^2 $; \quad $W = \int C d \theta $  ; \quad ${\cal P }_{méca} = \dot W_{méca} = C  \dot \theta$
+
+
+\subsubsection{Energie Potentielle associée à une force conservative}
+
+Energie potentielle de gravitation, entre deux corps de masses $M$ et $m$ séparés d'une distance~$r$~:
+
+$E_p = - m M {\cal G} / r  + Cte $, la $Cte$ est habituellement prise nulle.
+
+Cas particulier : énergie potentielle de pesanteur d'un objet de masse $m$ dans le champ de gravitation terrestre.
+
+$E_p = m g z + Cte'$, avec $g =  M {\cal G}/R^2$, et la $Cte'$ est habituellement prise nulle.
+
+Autres exemples : ressort linéaire $E_p =  k x^2/2$  ; ressort spiral 
+$E_p = k_r \theta^2/2$
+
+
+\subsection{Travail et énergie électrique}
+
+
+%\subsubsection{Energie (et travail) électrostatique et magnétostatique}
+
+Travail reçu par une charge $q$ circulant d'un point $A$  a un point $B$, dans un champ électrique $\vec E $ lentement variable :
+
+$$\delta W_{elec} = \int_A^B q {\vec E} \cdot d{\vec x} = q ( {\cal V}_A - {\cal V}_B ) $$
+
+(le champ électrique $\vec E$ dérive d'un potentiel : $\vec E = -{\vec \nabla} {\cal V} $).
+
+Considérons le cas d'un dipôle $AB$ de tension (différence de potentiel) aux bornes $U =  ( {\cal V}_A - {\cal V}_B )$, et traversé par une intensité $I$, branché à un circuit ${\cal S}$. Utilisons la {\em convention générateur}, plus pratique pour évaluer le travail reçu par le système ${\cal S}$ de la part du dipôle.
+
+La charge élémentaire traversant le circuit ${\cal S}$  pendant une durée $dt$ vaut $\delta q = I dt$.
+Le travail élémentaire et la puissance électrique {\em reçus par le circuit de la part du dipôle} 
+valent donc :
+
+$ \delta W_{elec} =  U I  dt$ ; \quad $ {\cal P}_{elec} = \delta W_{elec}/d t =  U I$.
+
+Considérons 4 cas :
+\begin{description}
+\item{\bf Générateur idéal de tension continue de f.e.m. E :} Dans ce cas $U = E$  et 
+$ {\cal P}_{elec} = E I$. Le travail électrique net est positif (travail reçu par le circuit).
+
+
+\item{\bf Résistance R : }  $U = -RI$ (en convention générateur) donc 
+$ {\cal P}_{elec} = -R  I^2 =- U^2/R$. On constate que ${\cal P}_{elec} <0$ : le travail électrique net est négatif, celui-ci est fourni par le circuit et reçu par le dipôle. Ce travail reçu est en général converti en énergie interne ou évacué sous forme de chaleur (effet Joule).
+
+
+\item{\bf Condensateur C :}
+  $ I =  - C dU /dt$ (convention générateur). %donc $ {\cal P}_{elec}  = 1/C  U_{AB} d U_{AB}/dt$.
+Le travail électrique est donc {\em conservatif} ; en effet  ${\cal P}_{elec} = - d E_{es} /dt$ ; où 
+$E_{es} = C U^2/2$ est l'énergie électrostatique.
+
+\item{\bf Inductance L} : $ U = - L dI/dt$. 
+%donc $ {\cal P}_{elec}  = 1/C  U_{AB} d U_{AB}/dt$.
+Le travail électrique est là aussi {\em conservatif} ; en effet  ${\cal P}_{elec} = - d E_{ms} /dt$ ; où $E_{ms} = L I^2/2$ 
+est l'énergie magnétostatique.
+
+
+\end{description}
+
+
+%Travail, reçu par le circuit de la part du circuit extérieur (par l'intermédiaire de la charge) : $\delta W_{elec} = {\cal U} I dt $ puissance $\dot{W}_{elec} = {\cal U} I$
+
+%Applications :Résistance, Capacité, Inductance.
+
+%Remarque : ces formules sont des cas particuliers de l'énergie électromagnétique.
+
+\subsection{Energie interne}
+
+Les programmes de 1ère S et TS abordent les différentes formes de l'énergie interne. On a dû vous dire que  l'énergie interne $U$ inclut notamment les contributions suivantes :
+
+\begin{itemize}
+\item{ \em "Energie thermique" ou "Energie sensible"}, directement liée aux variations de température.
+\item{ \em "Energie latente" }, qui est une énergie "stockée" lors des transitions de phases (Solide -> Liquide -> Gaz) et "restituée" dans les transitions de phase inverses.
+\item{ \em "Energie chimique" } (ou pouvoir calorifique) qui est l'énergie emmagasinée dans les liaisons entre atomes à l'intérieur des molécules, et "libérée" lors de réactions chimiques de type combustion.
+\item{ \em "Energie nucléaire"} forme d'énergie libérée au cours de réactions nucléaires.
+\end{itemize}
+ 
+On a également dû vous faire utiliser le modèle suivant d'énergie interne d'un système simple :
+\begin{equation}
+U = C \theta + U_0 \label{eq:Uterminale}
+\end{equation}
+
+Le premier terme $C \theta $ représente l'{\em énergie thermique} ou {\em énergie sensible} 
+(associée aux variations de température) : $C$ est la capacité thermique et $\theta$ la température (dans une échelle précisée), le second terme $U_0$ rassemble les autres formes d'énergie. 
+
+Remarque : $C$ a pour dimension physique (Energie/température). Si le système considéré est constitué d'un matériau homogène de masse $m$, on pourra écrire $C = mc$ où $c$ est la capacité thermique massique (dimension physique Energie/température/masse).
+
+
+
+
+{\em Commentaires :}
+\begin{enumerate}
+\item Le modèle (\ref{eq:Uterminale}) peut être utilisé pour les systèmes simples en phase condensée (liquide ou solide) en l'absence de changement de phase, mais GARDONS NOUS DE L'UTILISER SANS PRECAUTION pour les gaz !
+\item L'énergie latente et le pouvoir calorifique sont des concepts peu précis (il faut préciser les modalités de la transformation, la température, etc...). On introduira ultérieurement les notions plus précises d'{\em enthalpie de changement de phase} et d'{\em enthalpie de réaction}.
+\item Rappelons aussi que seules les VARIATIONS de l'énergie interne sont observables, donc les différents constituants de l'énergie interne ne sont pas dissociables les uns des autres ! 
+\end{enumerate}
+
+
+
+\section{Comment établir un bilan d'énergie ?}
+\begin{description}
+\item{$(i)$} Précisez le SYSTEME choisi pour l'étude. 
+\item{$(ii)$} Précisez l'EVOLUTION étudiée  : Evolution entre deux états d'équilibre précisés (type $a$) ; 
+Evolution élémentaire (type $b$) ;  Evolution dynamique (type $c$). FAIRE UN SCHEMA.
+\item{$(iii)$} Lister les types d'énergie pertinents dans l'évolution considérée (celles qui varient...)
+\item{$(iv)$} Lister les échanges d'énergie entre le système et l'extérieur, et prenez garde à leur signe (>0 : reçu ; <0 : fourni). 
+\item{$(v)$} Ecrire le bilan sous la forme adaptée : 
+ $(\Delta \cal E = ..)$, (type $a$) ;  $(d \cal E = ..)$ (type $b$) ; $(d {\cal E}/dt = ..)$ (type $c$).
+\end{description}
+
+Remarques : 
+
+\begin{itemize}
+\item Au point $(i)$ on précisera bien si le système est OUVERT ou FERME. Si le système est OUVERT, au point $(iv)$ il faut prendre en compte les échanges d'énergie par convection. Ce point est hors programme : on se débrouillera donc toujours pour considérer un système fermé.
+
+\item Selon la définition du système, les forces conservatives seront prises en compte soit en tant qu'énergie potentielle, soit en tant que travail, pas les deux !
+
+\end{itemize}
+
+
+
+
+
+
+%%%%%%%%%%%%
+
+
+
+\comment{
+
+\chapter{Les principes de la thermodynamique}
+
+\section{Définitions et histoire de la thermodynamique}
+
+\subsection{Thermodynamique phénoménologique}
+
+Contexte : première moitié du 19e siècle, inventions des machines à vapeur.
+
+A cette époque la nature de la matière est inconnue (l'hypothèse atomique est controversée).
+La théorie des transferts de chaleur est formalisée de manière mathématique (Joseph Fourier) mais 
+la nature même de la chaleur reste mystérieuse (hypothèse du "fluide calorique").
+
+La thermodynamique phénoménologique est construite comme une théorie englobant la mécanique
+et les transferts de chaleur. C'est une approche pragmatique bâtie sur des concepts mesurables 
+à l'échelle macroscopique, et ne nécessite pas d'hypothèse sur la réalité microscopique. La théorie
+postule l'existence de plusieurs {\em fonctions d'état}, les principales étant l'énergie interne et l'entropie, 
+dont la nature n'est pas explicitée et dont seules les variations sont observables.
+
+Cette première théorie thermodynamique est alors {\em la science des machines thermiques}.
+Plus tard elle englobera l'électricité,  la chimie, puis l'ensemble de la physique. 
+(figures principales : Sadi Carnot, Rudolf Clausius).
+
+\subsection{Thermodynamique statistique}
+
+Cette seconde approche complémentaire à la précédente est élaborée au cours de la seconde moitié du 19e siècle (Boltzmann). Elle vise a appuyer la théorie thermodynamique sur des concepts microscopiques.
+La théorie prend alors un caractère statistique : la température, l'entropie sont réinterprétés comme
+des moyennes statistiques sur un grand nombre de particules. La pertinence de cette approche tient au nombre formidable
+de particules élémentaires qui rend impossible une résolution exacte des équations microscopiques 
+(1 mole, quantité "macroscopique" de matière, contient $\cal N$ $=6.02\cdot 10^{23}$ molécules !). 
+
+La thermodynamique devient donc la {\em science des grands systèmes en équilibre}.
+Plus tard cette approche microscopique devra être étendue pour inclure des concepts issus
+de la mécanique quantique.
+Système, système
+
+
+\section{Principe zéro : la température}
+
+Définitions : systèmes, équilibre thermique. Exemples.
+
+\paragraph{Principe zéro :}
+"Deux systèmes A,B en équilibre thermique avec un troisième système  C sont en équilibre entre eux."
+
+Cette propriété permet de définir la température, fonction de l'état du système telle que
+si $\theta(A)=\theta(C)$ et $\theta(B)=\theta(C)$ alors $\theta(A)=\theta(B)$.
+
+\paragraph{Thermométrie}
+
+Définition : thermomètre.
+
+"Un thermomètre est un dispositif ayant une propriété mesurable dépendant uniquement de son état thermique
+(appelée sa grandeur thermométrique), et supposé suffisamment petit pour s'équilibrer avec un système 
+à mesurer sans interférer avec lui"
+
+Exemples : thermomètre à colonne liquide, thermorésistance, thermocouple.
+ 
+ Un thermomètre doit au préalable être étalonné (gradué) avec des systèmes de température connue.
+ 
+\paragraph{Echelles empiriques de température} : Echelle Centigrade, Echelle Fahreneit.
+ 
+Problèmes : ces échelles sont relatives à un thermomètre donné, autorisent des valeurs négatives, et permettent
+uniquement d'ordonner des températures, pas de les comparer dans l'absolu.
+ 
+\paragraph{Echelle absolue des températures des gaz parfaits.}
+
+dans la limite des faibles masses $PV/n = f(\theta)$ est une grandeur thermométrique indépendante 
+de la nature du gaz.
+
+Dans ce cas on peut définir une température absolue, notée $T$, et on choisit 
+$PV/n = f(T) = RT$.
+
+Le choix de $R$ est fait tel que $T(eau bouillante) - T(glace fondante) \approx 100$.
+Ceci définit l'unité (Kelvin) et la valeur numérique de la constante $R$.
+
+
+\paragraph{Echelle Celsius :} $\theta(^0C) = T(K)-273.15$
+
+Celle-ci coïncide de manière assez précise avec l'ancienne échelle centigrade en 
+la rattachant à une échelle "absolue".
+
+\section{Premier principe : l'énergie}
+
+Le premier principe stipule l'existence d'une quantité appelée "Energie" qui existe sous différentes
+formes, peut être convertie d'une forme en une autre à l'intérieur du système étudié, et être échangée 
+par un système avec l'extérieur par plusieurs modalités 
+(les principales étant : travail mécanique, chaleur, transport).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Qu'est-ce que l'énergie ?}
+
+C'est le point commun entre un objet en mouvement, 
+de l'eau derrière un barrage, du pétrole, un objet chauffé 
+à haute température, les électrons dans une ligne électrique, 
+et un atome d'uranium.
+
+On peut transformer ces situations les unes en les autres,
+et dans toutes ces transformation on peut calculer une quantité qui reste
+constante : l'énergie (premier principe de la thermo).
+
+MAIS toutes les transformations ne sont pas permises, seulement
+celles qui font passer d'une forme d'énergie plus ordonnée à une 
+forme moins ordonnée (second principe de la thermo).
+
+
+\subsection{Les différents types d'énergie}
+
+\subsubsection{Energie Mécanique}
+
+$E_m = E_c + E_p$.
+
+\subsubsection{énergie cinétique}
+
+Formules méca point
+$E_c = 1/2 m v^2$
+
+Cas d'un arbre en rotation : $E_c = 1/2 I \dot \theta^2 $;  $\dot W_{arbre} = \Gamma  \dot \theta$
+
+
+\paragraph{Energie potentielle}
+
+
+Energie potentielle de gravité
+$E_p = - m M {\cal G} / r  + Cte $, la $Cte$ est habituellement prise nulle.
+
+Autres exemples : ressort linéaire $E_p = k (l-l_0)^2 = k x^2$ 
+
+
+\subsubsection{Energie (et travail) électrostatique et magnétostatique}
+
+Travail reçu par une charge élémentaire $\delta q$ circulant d'un point $A$  a un point $B$ :
+
+$\delta W_{elec} = \int_A^B \delta q {\bf E} \cdot d{\bf x} = {\cal U}_{AB} \delta q$
+
+Cas d'un circuit de tension aux bornes $\cal U$ traversée par un courant $I$
+pendant une durée $dt$ :
+
+
+Travail, reçu par le circuit de la part du circuit extérieur (par l'intermédiaire de la charge) : 
+$\delta W_{elec} = {\cal U} I dt $ puissance $\dot{W}_{elec} = {\cal U} I$
+
+Applications :
+Résistance, Capacité, Inductance.
+
+Remarque : ces formules sont des cas particuliers de l'énergie électromagnétique.
+
+\subsubsection{L'énergie interne}
+
+L'énergie interne (notée $E$ ou $U$) est une énergie non associée au mouvement, 
+ni aux forces conservatives. 
+
+En thermodynamique statistique on donne une définition plus précise :
+l'énergie interne est la somme de toutes les énergies microscopiques.
+
+\paragraph{L'énergie sensible}
+
+$U = C (T-T_0) + U_0$  (cf chapitre 3).
+
+Ordre de grandeur : eau $c = 4.18 kJ/kg/K$
+
+\paragraph{L'énergie latente}
+ 
+Energie qu'il faut fournir à un corps pur pour briser des liaisons attractives entre atomes et changer de phase :
+
+Solide -> Liquide -> Gaz -> Plasma.
+
+La somme de l'énergie sensible et de l'énergie latente est l'énergie thermique 
+
+Figure : E. thermique vs. Température.
+ 
+\paragraph{L'énergie chimique}
+
+Définition : PCS, PCI d'un composé organique, composé de C,H,O (éventuellement N).
+
+PCI : Energie "libérée" lors de la combustion complète d'une unité de masse de combustible dans le dioxygène,
+les températures initiales et finale étant $25^0C$, les produits de combustion étant de l'eau sous forme vapeur
+et du CO2 (éventuellement N2). 
+
+PCS idem mais eau sous forme liquide.
+
+Remarque : c'est une propriété du système (combustible + oxygène)
+
+Pour les nutritionnistes : PCI = "valeur énergétique des aliments".
+
+
+Metabolisme basal : 150 W / adulte.
+(75W rayonnement, 60W convection, 8,3W evaporation, 6,7W respiration).
+
+Valeur énergétique des aliments 
+(glucides 4kcal/g = 17kJ/g, protéines 4kcal/g=17kJ/g, lipides 9kcal/g=38kJ/g)
+
+
+
+Exemples :
+
+1 kg pétrole = $42 MJ$.
+
+1 $m^3$ (soit $0.8 kg$) de gaz naturel = $42 MJ$.
+
+1 kg charbon = $28 MJ$.
+
+1 kg bois sec = $14 MJ$.  
+
+Remarque : au cours de la combustion cette énergie est convertie en chaleur.
+Dans une pile à combustible on peut convertir une partie en travail électrique.
+
+
+\paragraph{L'énergie nucléaire}
+
+$E = m c^2$. Une partie de cette énergie peut être libérée par
+des réactions nucléaires. 
+
+Exemple : au cours de la réaction de fission, l'uranium enrichi 
+se tansforme en divers produits de désintégration dont la masse totale
+est inférieure de $0,08 \%
+$ à la masse initiale. Cette masse perdue se transforme en énergie.
+
+Pour $1g$ d'uranium l'énergie libérée vaut $72,6 GJ$, soit 
+autant que 1,7 tonnes de pétrole !
+
+
+
+\paragraph{L'énergie du rayonnement}
+
+Rayonnement = nature duale. Donc deux expressions possibles : en terme
+de champ, ou en terme 
+de particules (photons). Dans ce cas $E = h \nu$.
+
+Remarque : c'est une forme particulière d'énergie électromagnétique.
+
+Rayonnement solaire sur terre :  $1.353 kW/m^2$ 
+sur une surface orientée face au soleil.
+
+Energie totale reçue sur terre : $1.7 \times 10 ^{17} W$.
+
+
+\paragraph{L'énergie totale}
+
+$\cal E$ = somme de toutes les énergies.
+
+Remarque : définie à une constante près.
+
+
+
+\section{Comment mesure-t-on l'énergie ?}
+
+Ce qui fait de l'énergie un concept scientifique c'est qu'on peut 
+la mesurer.
+
+Unités d'énergie : le Joule  ($1 J = 1 kg m^2  s^{-2}$).
+
+Autres unités : 
+
+l'électron-volt ($1 eV = 1.602 176 53 \times 10^{-19} J$), 
+
+le kiloWattheure ($1 kWh = 3600 kJ$),
+
+la tonne équivalent pétrole ($1t.e.p. = 41.86 GJ = 11628 kWh$),
+
+la calorie ($1cal = 4.1868 J$). 
+
+Attention pour les nutritionistes 1 Calorie = 1000 calories !
+
+
+Flux d'énergie = puissance.
+
+Unités de puissance : le Watt ($1 W = 1 J/s = 1 kg m^2 s^{-3}$), 
+le cheval-vapeur ($735.7 W$ en france, $745.7W$ aux USA).
+
+Ordres de grandeur : 
+
+Eclairage d'une pièce $100W$ (ou $15 W$ avec une ampoule fluo-compacte).
+
+Métabolisme d'un adulte au repos : $80 W$. 
+D'un grand sportif : $300 W$.  
+
+Mobilette : $1kW$.
+
+Automobile a $100 km/h$ (type 106) : $10 kW$ (7 pour les 
+frottements de l'air, 3 pour les frottements mécaniques). 
+Remarque : $2kW$ de plus si climatisation... 
+
+Centrale nucléaire : $200GW$.
+
+
+\section{Second principe : l'irréversibilité}
+
+(Remarque : il existe un 3e principe, seulement utile aux basses températures).
+
+}
+
+
+
+%\end{document}
+

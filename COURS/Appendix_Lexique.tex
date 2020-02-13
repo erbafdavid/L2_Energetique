@@ -1,0 +1,518 @@
+
+
+
+\chapter{Lexique  de la thermodynamique}
+
+%\markboth{\textsc{Fiches de cours de thermo}}{ \textsc{D. Fabre, Université Paul Sabatier, 2012}}
+
+\setcounter{subsection}{0}
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\subsection{Fonctions, variables}
+
+\begin{description}
+
+
+\item{\bf Variable, variable d'état}
+
+En {\em mathématiques}, une variable est un symbole qui marque un rôle dans une formule, 
+un prédicat ou un algorithme.
+
+En {\em informatique}, une variable est un symbole (habituellement un nom) qui renvoie à une position de 
+mémoire dont le contenu peut prendre successivement différentes valeurs pendant l'exécution d'un programme.
+
+En {\em physique}, une variable représente un paramètre physique mesurable comme la température, le temps, 
+la vitesse ou l'intensité.
+
+En {\em thermodynamique}, on appelle {\em variables d'état} les variables physiques choisies
+pour décrire l'état du système. 
+
+\item{\bf Fonction, fonction d'état}
+
+En {\em mathématiques}, une fonction est une relation entre deux ensembles, qui a tout élément du premier
+ensemble associe au plus un élément du second 
+(une fonction définie en tout point de l'ensemble de départ s'appelle une application).
+
+En {\em informatique}, une fonction est un ensemble d'instructions, indépendant du reste du programme, qui a pour
+rôle de calculer la valeur d'une ou plusieurs variables de sortie en fonction d'une ou plusieurs variables d'entrée.
+
+En {\em thermodynamique}, on appelle {\em fonction d'état} une quantité physique ne dépendant que de l'état du
+système, non mesurable directement, mais dont peut observer les variations et établir des bilans. 
+%Exemples :
+%Energie totale $E$, Energie interne $U$, energie 
+
+
+
+
+\subsection{Grandeurs physiques}
+
+\item{\bf Grandeur d'état}
+
+Quantité mesurable ou calculable caractérisant de manière intrinsèque un système 
+en fonction de son état macroscopique, indépendamment des évolutions passées.
+La variation d'une grandeur d'état au cours d'un cycle est donc nulle.
+%(on distingue en général "variables d'état" et "fonctions d'état" mais la distinction entre les deux peut dépendre du contexte).
+
+\item{\bf Grandeur d'échange}
+
+Quantité mesurant les échanges d'un système avec l'extérieur au cours d'une évolution donnée.
+Convention (française) : ($>0$) quantité {\em reçue} de l'extérieur ;
+ ($<0$) quantité {\em fournie} (ou {\em cédée}) à l'extérieur.
+
+\item{\bf Grandeur conservative}
+
+Grandeur d'état dont la variation au cours d'une évolution n'est due qu'à des échanges
+avec l'extérieur.
+
+\item{\bf Grandeur extensive}
+
+Grandeur définie pour un système "dans sa globalité" (si l'on divise le système en 2 par la pensée, 
+les grandeurs extensives de chaque moitié valent la moitié de la valeur pour le système complet).
+
+\item{\bf Grandeur intensive}
+
+Grandeur définie "en tout point" dans un système  (si l'on divise le système en 2 par la pensée, 
+les grandeurs intensives sont inchangées).
+Remarques :  $(i)$ une grandeur intensive peut être considérée 
+comme une grandeur d'état uniquement dans la mesure où elle est {\em uniforme } à l'intérieur du système ;
+$(ii)$ le rapport de deux grandeurs extensives est une grandeur intensive (exemples : masse molaire, énergie volumique, etc...) 
+
+
+\item{\bf Grandeur stationnaire}
+
+Une grandeur $Y$ est stationnaire si elle ne dépend pas du temps ($\partial Y / \partial t = 0$).
+
+
+\item{\bf Grandeur uniforme}
+
+Une grandeur intensive $y$ est uniforme si elle ne dépend pas de l'espace 
+($\vec{grad} \, y = 0$).
+
+
+\item{\bf Grandeur constante} 
+
+Une grandeur est constante si elle est uniforme et stationnaire.
+
+
+
+
+\subsection{Concepts thermodynamiques essentiels}
+
+Pour la plupart des notions, on donne deux définitions. 
+
+La première $(i)$ relève de la {\em thermodynamique phénoménologique}. 
+
+La seconde ($ii$) relève de la {\em thermodynamique statistique}. 
+
+\item{\bf Energie totale ${\cal E}$ } 
+
+$(i)$ 
+L'énergie totale est la grandeur conservative dont l'existence est postulée par le premier principe de la thermodynamique.
+
+$(ii)$ 
+L'énergie totale est définie comme la somme de toutes les énergies microscopiques sous toutes les formes possibles.
+
+\item{\bf Energie interne $U$ (parfois notée $E$) } 
+
+$(i)$ L'énergie interne est une fonction d'état qui, ajoutée à l'énergie macroscopique (mécanique et éventuellement électrique) constitue l'énergie totale dont l'existence est postulée par le premier principe de la thermodynamique. 
+
+$(ii)$ 
+L'énergie interne est définie comme la somme de la partie {\em non cohérente} de toutes les énergies microscopiques 
+(la partie cohérente correspondant à l'{\em énergie macroscopique}, c.a.d. Mécanique et électrique). 
+
+
+%On note également $U = \iiint u dm $ où $u$ est l'énergie interne massique.
+
+
+\item{\bf Température $T$ (ou $\theta$)}  
+
+$(i)$ La température est une grandeur intensive qui permet de caractériser l'état d'équilibre (ou de déséquilibre) thermique. 
+(Cette définition définit une température {\em relative} $\theta$ dont la définition dépend du thermomètre utilisé).
+
+($ii$) La température {\em absolue} est une mesure de la valeur moyenne de chaque contribution quadratique élémentaire à l'énergie microscopique : $<e> = kT/2$ , où $k$ est la constante de Boltzmann.
+
+\item{\bf Pression $P$} 
+
+$(i)$ La pression est une force normale par unité de surface exercée par un système sur sa frontière, qui permet de caractériser l'état d'équilibre (on de déséquilibre) mécanique.
+
+$(ii)$ La pression est une grandeur statistique qui représente les échanges de quantité de mouvement (collisions, attractions, répulsions,...) entre les particules élémentaires constituant le système et le milieu extérieur.
+
+
+%Deux systèmes sont en {\em équilibre mécanique} entre eux s'ils ont la même pression.
+
+\item{\bf Travail $W$}
+
+$(i)$ Echange d'énergie associé à un déplacement observable à l'échelle macroscopique
+\footnote{Cette définition inclut le travail électrique, associé au déplacement de charges électriques.} 
+
+$(ii)$ Le travail macroscopique est la partie {\em cohérente} de la somme des travaux microscopiques.
+
+
+\item{\bf Chaleur (ou transfert thermique) $Q$ }
+
+$(i)$ Echange d'énergie non associé à un déplacement observable à l'échelle macroscopique
+
+$(ii)$ La chaleur est la partie {\em non cohérente}  de la somme des travaux microscopiques.
+
+
+\item{\bf Entropie $S$ } 
+
+$(i)$ L'entropie est la fonction d'état dont la variation est égale, pour une transformation réversible,
+au rapport entre la chaleur reçue et la température ($d S = \delta Q/T$).
+
+$(ii)$ L'entropie est une mesure statistique du degré de désordre du système au niveau microscopique. 
+
+
+
+
+%\end{description}
+
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\subsection{Systèmes}
+
+
+%\begin{description}
+
+
+\item{\bf Système}
+
+L'objet pris comme sujet d'étude et séparé par la pensée du reste du monde, appelé "extérieur".
+Il importe de toujours bien préciser le système choisi et sa frontière (en faisant éventuellement une figure).
+
+\item{\bf Système simple}
+
+Système de composition homogène, pour lequel on peut négliger les effets de pesanteur, d'énergie cinétique, d'inertie, 
+ainsi que les effets de champ électrique ou magnétique et de tension de surface. (Pour un système simple le bilan d'énergie se ramène à un bilan d'énergie interne).
+
+
+\item{\bf Système ouvert}
+
+Système échangeant de la masse et de l'énergie avec l'extérieur (par au moins une de ses frontières).
+
+\item{\bf Système fermé}
+
+Système n'échangeant pas de masse avec l'extérieur.
+
+
+\item{\bf Frontière (ou paroi) adiabatique}
+
+Frontière ne permettant pas d'échange de chaleur (c'est une idéalisation, justifiée si l'échelle de temps
+à laquelle on considère le système est courte devant son {\em temps caractéristique thermique}).
+
+
+\item{\bf Frontière (ou paroi) indéformable}
+
+Frontière ne permettant pas d'échange de travail mécanique (c'est aussi une idéalisation, valable en pratique
+dans une gamme de pression pas trop élevée)
+
+\item{\bf Système isolé}
+
+Système n'échangeant ni masse, ni énergie avec l'extérieur. Un système simple isolé est donc un système {\em fermé}
+dont la frontière est {\em indéformable et adiabatique}. (Pour un système non simple on pourra rajouter les conditions adaptées : isolé électriquement, magnétiquement, etc... ) 
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Equilibres} 
+
+\item{\bf Equilibre thermodynamique}
+
+Un système {\em isolé} est à l'équilibre thermodynamique s'il n'évolue pas durant le temps où on l'observe. L'équilibre thermodynamique d'un système simple impose les équilibres mécanique et thermique entre les sous-systèmes le constituant (pour une système non simple on rajoutera le cas échéant des 
+conditions d'équilibre chimique, électrique, magnétique).
+Pour un tel état, les grandeurs intensives (pression, température) sont uniformes, et les grandeurs d'état
+sont reliées entre elles par des équations d'état.
+
+\item{\bf Equilibre mécanique}
+
+Deux systèmes sont à l'équilibre mécanique si, mis en contact par une frontière commune
+déformable mais adiabatique, ils n'évoluent pas.
+
+Dans le cas de systèmes simples : deux systèmes sont à l'équilibre mécanique si leurs pressions sont égales.
+
+\item{\bf Equilibre thermique}
+
+Deux systèmes sont à l'équilibre thermique si, mis en contact par une frontière commune
+indéformable mais laissant passer la chaleur, ils n'évoluent pas.
+
+Dans le cas de systèmes simples : deux systèmes sont à l'équilibre mécanique si leurs températures sont égales.
+
+
+
+\item{\bf Equilibre thermodynamique local}
+
+L'hypothèse d'équilibre thermodynamique local consiste à supposer que dans chaque volume élémentaire à l'échelle mésoscopique, les grandeurs d'état intensives sont reliées entre elles par les équations d'état caractérisant l'équilibre thermodynamique.
+
+
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\subsection{Evolutions}
+
+
+
+\item{\bf Evolution}
+
+Modification de l'état d'un système entre un état initial défini et un état final défini. (Toujours préciser l'évolution considérée avant d'effectuer un bilan d'énergie).
+
+\item{\bf Evolution élémentaire} 
+
+Evolution entre deux états infiniment proches.
+
+\item{\bf Evolution réversible}
+
+Une évolution réversible d'un système est une succession d'équilibres (ou quasi-équilibres) thermodynamiques.
+
+\item{\bf Cycle}
+
+Evolution pour laquelle l'état final et l'état initial du système sont identiques (c.a.d. non distinguables à l'échelle
+macroscopique).
+
+\item{\bf Evolution en régime permanent}
+
+Se dit d'un système dont l'état macroscopique est stationnaire (c.a.d. toutes les grandeurs
+physiques sont stationnaires ; mais les grandeurs intensives ne sont pas forcément uniformes).
+Notion surtout utile pour les systèmes ouverts et les appareils électriques ; on effectuera alors en général un bilan d'énergie (ou d'enthalpie)  par unité de temps (la somme des {\em puissances} échangées avec l'extérieur est nulle).
+
+\item{\bf Détentes, Compression} Une détente est une évolution au cours de laquelle le volume augmente ; une compression est une évolution au cours de laquelle le volume diminue.
+
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\subsection*{Evolutions particulières : aspect mécanique}
+
+
+\item{\bf Isochore} Evolution au cours de laquelle le volume ne varie pas (le travail reçu par la frontière est nul).
+
+\item{\bf Isobare} Evolution au cours de laquelle la pression ne varie pas (et reste uniforme).
+
+\item{\bf Monobare} Evolution dans laquelle tous les échanges de travail s'effectuent avec un milieu extérieur de pression uniforme (le milieu extérieur est un {\em pressostat}).
+
+\item{\bf Mécaniquement réversible} Succession d'équilibres mécaniques internes (la pression est uniforme à tout instant). On dit aussi {\em Evolution quasi-statique}, ou {\em Evolution homobare}.
+
+
+\subsection*{Evolutions particulières : aspect thermique}
+
+\item{\bf Adiabatique} Evolution au cours de laquelle la chaleur reçue est nulle.
+
+\item{\bf Isotherme} Evolution au cours de laquelle la température ne varie pas (et reste uniforme).
+
+\item{\bf Monobare} Evolution dans laquelle tous les échanges de chaleur s'effectuent avec un milieu extérieur de température uniforme (le milieu extérieur est un {\em thermostat}).
+
+\item{\bf Thermiquement réversible} Succession d'équilibres thermiques internes (la température est uniforme à tout instant). On dit aussi {\em Evolution homotherme}.
+
+
+
+
+%\item{\bf Energie interne $U$ (ou $E$) } 
+
+%L'énergie interne est la somme de la partie {\em non cohérente} de toutes les énergies microscopiques 
+%(la partie cohérente correspondant à l'énergie mécanique). 
+%
+
+
+\subsection{Fonctions d'état (ou potentiels thermodynamiques)} 
+
+On appelle {\em variables canoniques} les deux variables dans lesquelles la différentielle d'une fonction d'état s'exprime le plus naturellement.
+
+
+\item{\bf Energie interne $U$ } 
+
+Les variables canoniques de la fonction $U$ sont ($V,S$).
+
+{\it $U$ est conservée lors d'évolutions {\em isochores} et {\em adiabatiques} d'un système simple}
+
+\item{\bf Enthalpie $H$ } 
+
+L'enthalpie est une fonction d'état définie, pour un système simple à pression uniforme, par  
+$H = E + PV$. Interprétation physique : le terme additionnel $PV$ peut interprété comme une 
+"énergie potentielle de pression", mobilisée lors de changements de volume du système au contact d'un milieu extérieur de pression constante (attention : interprétation valable uniquement pour des évolutions monobares !).
+
+Les variables canoniques de la fonction $U$ sont ($P,S$).
+
+{\it Elle est conservée lors d'évolutions {\em monobares} et {\em adiabatiques} d'un système simple.}
+
+%Si la pression n'est pas uniforme, la définition se généralise en $H = \iiint h dm$, où $h = e + p/\rho$ est l'enthalpie massique.
+
+
+
+%On a $u U = \iiint u dm $ où $u$ est l'énergie interne massique.
+
+
+\item{\bf Energie libre $F$}
+
+L'énergie libre est une fonction d'état définie, pour un système à l'équilibre, par  
+$F = U - TS$.
+
+Les variables canoniques de la fonction $F$ sont ($V,T$).
+
+{\it Elle est conservée lors d'évolutions {\em isochores}  et {\em isothermes} d'un système simple.}
+
+
+\item{\bf Enthalpie libre $G$ } 
+
+
+
+%\item{\bf  } 
+L'enthalpie libre est une fonction d'état définie, pour un système à l'équilibre, par  
+$G = H - TS = U + PV - TS$. 
+
+Les variables canoniques de la fonction $F$ sont  ($P,T$).
+
+{\it Elle est conservée lors d'évolutions {\em isobares}  et {\em isothermes} d'un système simple.}
+
+
+\end{description}
+
+
+
+%\clearpage
+
+\subsection{Notations}
+
+
+\begin{description}
+
+\item{$\Delta Y$}
+
+Variation d'une grandeur {\em d'état} au cours d'une évolution d'un système, qu'il convient d'avoir précisé.
+
+
+\item{$d Y$}
+
+Physiquement : la petite variation de la grandeur {\em d'état} $Y$ au cours d'une petite évolution 
+entre deux états très proches. \footnote{On dira aussi : variation élémentaire de la grandeur d'état $Y$ au 
+cours d'une évolution élémentaire entre deux états infiniment proches.}
+Mathématiquement : {\em différentielle} de la grandeur $Y$. Si $Y$ est une fonction de plusieurs variables et si la différentielle de $Y$ est exprimée en fonction des différentielles de ses variables, alors celle-ci est intégrable.
+
+\item{$\delta Y$}
+
+Physiquement : une petite quantité (ou {\em quantité élémentaire}) de la grandeur $Y$ (qui n'est 
+pas forcément une grandeur d'état).
+Mathématiquement : forme différentielle associée à la grandeur $Y$. 
+Si $Y$ est une grandeur d'échange, la forme différentielle $\delta Y$ ne peut en général pas être intégrée.
+
+
+\item{$\displaystyle \left. \frac{\partial X}{\partial Y} \right|_Z$ ; noté aussi $\displaystyle \left( \frac{\partial X}{\partial Y} \right)_Z$ }
+
+Dérivée partielle de la fonction $X(Y,Z)$ par rapport à sa variable $Y$.
+
+On lit : "{\em Dérivée de $X$ par rapport à $Y$, à $Z$ constant}"
+
+
+
+\item{$\dot Y$}
+\begin{itemize}
+\item Pour une grandeur d'état : variation de $Y$ {\em par unité de temps}. Dans ce cas $\dot Y = d Y/ dt$, {\em c'est une dérivée}.
+\item Pour une grandeur d'échange : quantité de $Y$ échangée {\em par unité de temps}. 
+Dans ce cas $\dot Y = \delta Y/ dt$, {\em ce n'est pas une dérivée}.
+\end{itemize}
+Unité physique  : $[\dot Y] = [Y] s^{-1}$
+
+\item{$y$}
+
+Si $Y$ est une grandeur d'état extensive d'un système de masse $m$, 
+alors $y = Y/m$ est la grandeur intensive {\em massique} associée.
+Unité physique  : $[y] = [Y] kg^{-1}$.
+
+
+Exceptions : la masse totale d'un système (extensive) est habituellement notée $m$ ; 
+le nombre de moles (extensif) est noté $n$ ; 
+la masse molaire (intensive) est habituellement notée $M = m/n$.
+
+
+\item{$y^{(mol)}$}
+
+Si $Y$ est une grandeur d'état extensive d'un système contenant $n$ moles, 
+alors $y^{(mol)} = Y/m = y / M$ est la grandeur intensive {\em molaire} associée.
+Unité physique  : $[y^{(mol)}] = [Y] mol^{-1}$.
+Remarque : si le contexte est clair on omet parfois l'exposant $^{(mol)}$ dans la notation.
+
+
+
+
+\end{description}
+
+
+
+
+%%%%%%% TRASH
+\comment{
+\subsection{Décomposition de l'énergie interne} 
+
+\item{\bf "Energie sensible (ou chaleur sensible)"}
+
+L'énergie sensible (anciennement appelée chaleur sensible) est la forme d'énergie interne dont les variations sont liées aux variations de température, en l'absence de réactions chimiques, nucléaires ou changements de phase.
+
+Au niveau microscopique, cette énergie est associée à l'agitation désordonnée des 
+molécules ou des atomes.
+
+
+
+\item{\bf "Energie latente (ou chaleur latente)"}
+
+L'énergie latente (ou chaleur latente) est la 
+quantité d'énergie qu'il faut fournir (généralement sous forme de chaleur) à un système simple au cours d'un changement de phase endothermique (fusion, vaporisation, sublimation), et qui
+est libérée (généralement sous forme de chaleur) lors des changements de phase inverses (solidification, liquéfaction, condensation). 
+
+Au niveau microscopique, il s'agit d'une variation de l'énergie potentielle associée aux liaisons inter-moléculaires.
+
+ 
+Définition plus rigoureuse : voir enthalpie de changement d'état.
+
+
+\item{\bf Enthalpie de changement d'état}
+
+L'enthalpie de changement d'état d'un corps pur est la variation d'enthalpie qui 
+accompagne le passage du système d'un état physique 1 à un état physique 2, cette transformation s'effectuant température et pression constante. On note 
+$(\Delta H)_{12} = m \ell_{12}$ où $\ell_{12}$ est l'enthalpie massique de changement d'état
+(anciennement appelée chaleur latente). On distingue $\ell_{sl}$, $\ell_{lv}$,  $\ell_{sv}$ les enthalpies massiques de liquéfaction, vaporisation, sublimation.
+ 
+
+
+
+
+\item{\bf "Energie chimique"}
+
+L'énergie chimique est la quantité d'énergie qui est libérée au cours 
+d'une réaction chimique exothermique (totalement sous forme de chaleur si la réaction est une combustion spontanée ; ou en partie sous forme de travail si la réaction a lieu de manière contrôlée), ou qu'il faut fournir lors de la réaction inverse.
+
+Au niveau microscopique, il s'agit d'une variation de l'énergie potentielle associée aux liaisons intra-moléculaires.
+
+Définition plus rigoureuse : voir PCI et PCS.
+
+
+
+\item{\bf Pouvoir calorifique inférieur (PCI)}
+
+Variation d'{\em enthalpie} lors de la combustion complète  d'un 
+combustible organique ($C,H,O,N$) avec la quantité stoechiométrique de dioxygène ($O_2$),
+ initialement à une température de $25^oC$, sous une pression de $10^5 Pa$, 
+les produits de combustion étant du dioxyde de carbone ($CO_2$), du diazote ($N_2$), et de l'eau ($H_2O$) sous forme de vapeur, à une température de $25^oC$.
+
+
+
+\item{\bf Pouvoir calorifique supérieur (PCS)}
+
+Définition identique à ceci près que l'eau issue de la combustion est sous forme liquide 
+à $25^o$.
+
+\item{\bf "Energie nucléaire"}
+
+L'énergie nucléaire est la quantité d'énergie qui est libérée au cours 
+d'une réaction de fission ou de fusion nucléaire.
+
+Au niveau microscopique, il s'agit d'une variation de l'énergie potentielle associée aux forces de cohésion entre les nucléons au sein du noyau atomique.
+
+\end{description}
+}
+
+
+
+
+%}
+

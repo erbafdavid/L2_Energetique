@@ -1,0 +1,302 @@
+
+
+\chapter{Transferts thermiques}
+
+{\em 
+Objectifs du chapitre : connaître les 3 modes de transmission de la chaleur, leur nature physique et les modèles mathématiques associés (lois de Fourier, de Newton, de Stefan-Boltzmann). Savoir résoudre des problèmes de transferts thermiques stationnaires ou instationnaires simples 
+(systèmes thermiquement minces).
+}
+
+
+\section{Introduction}
+ 
+Rappel : chaleur = mode de transfert de l'énergie {\em non associé à un déplacement macroscopique} (chap. 1), qui correspond à {\em la partie non cohérente des travaux microscopiques} (chap. 5) échangés entre deux systèmes. 
+
+ Notation : (dans ce  chapitre)  $\Phi_{A \rightarrow B}$ transfert thermique d'un système $A$ vers un système $B$ (unité $J/s = W$). Autre notation : $\Phi \equiv \dot Q = \delta Q / dt $ (mais nécessite de préciser la convention).
+ 
+Il existe 3 modes de transmission de la chaleur : conduction, convection, rayonnement.
+ 
+ \section{Conduction thermique}
+ 
+\subsection{ Définitions :} 
+
+\paragraph{Conduction :} {\em Transfert de chaleur dans un milieu matériel immobile, dû aux interactions (collisions, excitations) entre particules adjacentes.}
+ 
+ \paragraph{Vecteur flux surfacique de chaleur } $\vec q$ : quantité vectorielle intensive [unité : $W/m^2$] , dont l'intégrale sur une surface $\cal S$ permet de calculer le flux total à travers celle-ci :
+  
+  $$
+  \Phi_{A \rightarrow B} = \iint_{\cal S} \vec q \cdot \vec n_{A \rightarrow B} d S
+  $$
+  
+
+\subsection{Loi de Fourrier}
+
+Cette loi, établie de manière empirique, relie le flux de chaleur au gradient de température :
+
+$$
+\vec q = - k \, \vec{grad}  T 
+$$
+
+$k$ est une propriété du matériau appelée {\em conductivité thermique} [unité : $W \cdot m^{-1} \cdot K^{-1}$].
+
+\subsection{Origine physique}
+
+\paragraph{Dans les gaz,} la conduction est due aux collisions : si un gaz "chaud" (peuplé de particules rapides) est mis en contact avec un gaz "froid" (peuplé de particules lentes), les collisions vont tendre à uniformiser la distribution de vitesses (donc la température). 
+
+Ordre de grandeur : air à température habituelle $k = 0.0026 W/K/M$. Remarque : dans les gaz $k$ augmente avec $T$.
+
+\paragraph{Dans les solides,} la conduction est due aux modes de vibrations du réseau cristallin (également appelés phonons) ainsi que (dans les métaux) aux électrons libres. 
+
+Ordres de grandeur : cuivre $k = 400 W/K/m$ ; béton $k =0.92 W/K/m$ ; polystyrène expansé $k = 0.004 W/K/m$. Selon les matériaux $k$ est croissante ou décroissante avec $T$.
+
+\paragraph{Dans les liquides,} les phénomènes sont du même type que dans les solides, mais la modélisation est plus complexe du fait que les particules sont en mouvement  continuel.
+
+Ordre de grandeur : eau $k = 0.613 W/K/M$. En général dans les liquides $k$ diminue avec $T$.
+
+\subsection{"Equation de la chaleur"}
+
+\paragraph{Bilan d'enthalpie}
+
+L'équation de la chaleur s'obtient traditionnellement en faisant un bilan local d'énergie ; cependant le cas ou le milieu matériel est dilatable, il est préférable de partir d'un bilan local d'enthalpie qui dispense de s'occuper du travail reçu. Ce bilan s'écrit :
+$$
+\frac{\partial (\rho h) }{\partial t} = - div ( \vec q) 
+$$
+
+
+
+Démonstration $(i)$ : On écrit un bilan d'enthalpie sur un volume $\cal V$ traversé par le flux de chaleur à travers sa surface extérieure $\cal S$, puis on utilise le théorème de la divergence :
+
+$$
+\frac{d H}{dt} = \iiint_{\cal V} \frac{\partial}{\partial t} \left( \rho h \right) d V 
+= \iint_{\cal S}  \vec q \cdot  \vec n dS = - \iiint_{\cal V} div ( \vec q)d V
+$$
+
+Le bilan étant valable quelque soit le volume $\cal V$, on aboutit à l'équation locale écrite ci-dessus (attention, ici $\vec n$ est la normale entrante !). 
+Remarque : si le milieu est dilatable, il faut écrire ce bilan dans des coordonnées spatiales "dilatables" (plus exactement Lagrangiennes).
+
+
+
+
+Démonstration $(ii)$ : On écrit un bilan d'enthalpie sur un volume élémentaire $dV = dx \, dy \, dz$, puis on fait tendre les dimensions vers zéro.
+
+\paragraph{Equation de la chaleur}
+
+Supposons que $c_p, \rho$ et $k$ sont constants. En utilisant la relation $h = h_0 + c_p (T-T_0)$  et la propriété $div ( k \, \vec{grad}\, T) = k \,div( \vec{grad}\, T) = k \nabla^2 T$,
+\footnote{Ici la notation $\nabla^2 $  désigne l'opérateur laplacien : 
+$\nabla^2  T = (\partial^2/\partial x^2 +\partial^2/\partial y^2+\partial^2/\partial z^2) T$. Afin d'éviter toute confusion, on évitera d'utiliser la notation $\Delta$ qui a un sens différent en thermodynamique...
+}
+on arrive à la forme classique de l'équation de la chaleur :
+
+
+$$
+\rho c_p 
+\frac{\partial T}{\partial t} = k \nabla^2 T + \Pi_0
+$$
+
+\paragraph{Remarques } :
+\begin{description}
+
+\item{$(i)$}  Une autre forme classique est la suivante : 
+$$
+\frac{\partial T}{\partial t} = a \nabla^2 T +\frac{\Pi_0}{\rho c_p}
+$$
+où $a = k/(\rho c_p)$ est l'effusivité thermique [unité : $m^2/s$, cf. viscosité cinématique]. 
+
+\item{$(ii)$} Dans ces lois la température absolue $T$ peut être remplacée par la température relative $\theta$ (car seules des dérivées de $T$ interviennent ici).
+
+\item{$(iii)$} Dans ce bilan le terme $\Pi_0 = - \rho \partial h_0 / \partial t$ est le {\em taux de production volumique de chaleur}, qui peut représenter, par exemple, une énergie libérée lors d'une réaction chimique. Selon les besoins du problème considéré ce terme pourra également inclure : de la dissipation électrique, de l'absorption volumique de rayonnement, des réactions nucléaires, etc...
+
+\item{$(iv)$} Dans les liquides et les solides, on peut en général supposer $c_p \approx c_v$. Attention au cas des gaz (cependant dans ce cas on a en général de la convection...) 
+ 
+\end{description}
+
+\subsection{Conduction stationnaire en géométrie simple}
+
+On s'intéresse à la conduction thermique stationnaire, sans source de chaleur interne, dans un milieu conducteur séparant un milieu amont de température $T_i$ et un milieu aval de température $T_e$.
+On s'intéresse plus particulièrement à la {\em résistance thermique de conduction}, définie par :
+
+$$ R_{cond} = \frac{T_i - T_e}{\Phi_{i\rightarrow e}}$$ 
+
+\paragraph{$(i)$ Conducteur monodimensionnel } ($T = T(x)$ ; $x$ coordonnée carthésienne)
+
+Considérons un milieu monodimensionel d'épaisseur $e$ et de surface transverse $S$. 
+La solution de l'équation de la chaleur est : $ T(x) = T_i + (T_e-T_i) x /e$, et le flux total est : $\Phi_{i \rightarrow e} = S k (T_i-T_e)/e$. La résistance thermique est donc : 
+
+
+$$ R_{cond} =\frac{e}{kS}$$ 
+
+\paragraph{$(ii)$ Manchon cylindrique } ($T = T(r)$ ; $r$ rayon en coordonnées cylindriques)
+
+
+Le milieu est constitué est un manchon cylindrique de rayon intérieur $R_i$, rayon extérieur $R_e$ et longueur $L$. 
+La répartition de température vérifie : $\nabla^2 T = \frac{1}{r}\frac{\partial}{\partial r} \left( r \frac{\partial T}{\partial r} \right) = 0$. Compte tenu des conditions limites, la solution est de la forme :
+$T(r) = T_i + (T_e - T_i) \frac{\ln ( r/ R_i)}{\ln ( R_e/ R_i)}$. Le flux correspondant vaut $\Phi_{i\rightarrow e} = (T_i-T_e)/R_c$ avec :
+
+$$ R_{cond} =\frac{\ln (R_e/R_i) }{2 \pi L k}$$ 
+
+
+\paragraph{$(ii)$ coquille sphérique } ($T = T(r)$ ; $r$ rayon en coordonnées sphériques)
+
+
+Le milieu est constitué est une coquille sphérique de rayon intérieur $R_i$, rayon extérieur $R_e$ et longueur $L$. 
+La répartition de température vérifie : $\nabla^2 T = \frac{1}{r^2}\frac{\partial}{\partial r} \left( r^2 \frac{\partial T}{\partial r} \right) = 0$. Compte tenu des conditions limites, la solution est de la forme :
+$T(r) = T_i + (T_e - T_i)  ( 1/r - 1/R_i)/(1/R_e-1/R_i) $. Le flux correspondant vaut $\Phi_{i\rightarrow e} = (T_i-T_e)/R_c$ avec :
+
+$$ R_{cond} =\frac{ R_e-R_i }{4 \pi k R_e R_i}$$ 
+
+
+
+
+
+\paragraph{$(iv)$ Généralisation : milieu conducteur de faible épaisseur}
+
+On remarque qu'à partir des expressions de la résistance thermique dans les cas cylindriques et sphériques, en supposant $R_i - R_e = e \ll R_i$ et en faisant un développement limité, on trouve 
+$R_c \approx (R_e-R_i)/kS$, c.a.d. la formule du cas monodimensionel.
+
+On admettra que pour une coque de géométrie quelconque et d'épaisseur $e$ faible devant toutes les autres dimensions, on pourra utiliser la formule simple $R_c \approx (R_e-R_i)/kS$.
+
+\section{La convection}
+
+\paragraph{Définitions :} La convection est le mode de transfert de chaleur qui se manifeste entre une paroi solide et un milieu fluide en mouvement.  
+
+En pratique on observe l'existence d'une {\em couche limite } a travers laquelle la température du fluide varie continument entre $T_s$ (température de la surface) et $T_f$ (température du milieu ambiant fluide).
+
+On distingue {\em convection libre} (le fluide se met en mouvement de lui-même car il chauffe au contact de la paroi, devient moins dense et prend un mouvement ascendant) et {\em convection forcée} (le fluide est mis en mouvement par un dispositif extérieur, par ex. un ventilateur).
+  
+\paragraph{Loi de Newton}
+
+C'est une loi empirique qui suppose que le flux est proportionnel à la différence de température et à la surface :
+
+$$\Phi_{s \rightarrow f} = h_{conv} S (T_s - T_f )$$
+
+Ici $h_{conv}$ est le {\em coefficient de convection} [unité $Wm^2/K$], qui dépend du fluide, de la géométrie et du type de convection.
+
+Ordres de grandeurs : pour l'air $h\approx [4-10] W/m^2/K$ (conv. libre) ou $h\approx [10-300] W/m^2/K$ (conv. forcée) ;  pour l'eau $h\approx [100-1000] W/m^2/K$ (conv. libre) ou $h\approx [300-20000] W/m^2/K$ (conv. forcée). 
+
+Remarque : $h \approx k / \delta$ où $\delta$ est l'épaisseur caractéristique de la couche limite. En pratique $\delta$ est souvent de l'ordre du millimètre, voire moins.
+
+%\paragraph{Résistance de convection} : la loi de Newton peut se mettre sous la forme 
+%$\Phi_{s \rightarrow f} =  (T_s-T_{f}) /R_{conv}$, avec :
+%$$R_{conv} = \frac{1}{h_{conv} S}$$
+
+\section{Rayonnement thermique}
+
+\paragraph{Définition : } Le rayonnement thermique (ou rayonnement électromagnétique) est un mode de transfert d'énergie qui se propage dans le vide (ou dans les milieux transparents), et dont l'émission et l'absorption coïncident avec des transitions des particules élémentaires entre deux états énergétiques quantifiés.  Il peut être représenté soit sous forme corpusculaire (les photons) soit sous forme d'ondes.
+
+\paragraph{Lois de Stefan-Boltzmann} :
+
+Soit un objet de surface $S$ de température de surface $T_s$, de forme convexe et entièrement plongé dans un milieu extérieur (enceinte fermée ou environnement lointain) de température $T_{ext}$.
+\begin{description}
+\item{ $(i)$ Le {\em flux émis}} de $S$ vers $(ext)$ vaut :  
+
+$$\Phi_{emis} = \epsilon \sigma S T_s^4$$
+
+où $\sigma = 5.7 \times 10^{-8} W /m^2 / K^4$ est la constante de Stefan-Boltzmann et $\epsilon \in [0,1]$ est l'émissivité du matériau.
+
+\item{ $(ii)$ Le {\em flux absorbé}} par $S$ de la part de $(ext)$ vaut :  
+
+$$\Phi_{absorbe} = \alpha \sigma S T_{ext}^4$$
+
+où  $\alpha \in [0,1]$ est l'absorptivité du matériau.
+
+\item{ $(iii)$} Dans le cas d'un matériau opaque, $\alpha = \epsilon$ et le {\em flux net} échangé entre $S$ et  $(ext)$ vaut :  
+
+$$\Phi_{s\rightarrow ext} = \Phi_{emis}  -   \Phi_{absorbe} = \epsilon \sigma S (T_s^4 - T_{ext}^4).$$
+
+\end{description}
+
+Remarques : le cas $\epsilon = \alpha = 1$ correspond au modèle du "corps noir". 
+
+Pour des matériaux opaques courants ( béton, bois, plastique, ...) $\epsilon = \alpha \approx [0.9-0.95]$. 
+
+\paragraph{Loi de Wien}
+
+Le rayonnement est caractérisé par son spectre (répartition de l'énergie émise selon les différentes longueurs d'ondes). Le "pic" d'émission correspond à la longueur d'onde principale $\lambda_m$, donnée par la loi de Wien :
+$$\lambda_m T_s = 2900 [\mu m \cdot K]$$
+
+Exemples : Soleil $T_s = 5700 K$ => $\lambda_s = 0.55 \mu m$ (visible, jaune) ; corps humain  
+$T_s = 300 K$ => $\lambda_s \approx 10 \mu m$ (infrarouge) ; cosmos $T_s = 3 K$ => $\lambda_s \approx 1 mm$ (ondes radio) ; réacteur nucléaire $T_s = 10^6 K$ => $\lambda_s \approx 1 nm$ (rayons X).
+
+\paragraph{Flux radiatif linéarisé}
+Si $T_s - T_{ext} \ll T_{ext}$ on utilise couramment l'approximation linéaire :
+$$
+\Phi_{s\rightarrow ext} =  \epsilon \sigma S ( T_s^4  - T_{ext}^4)
+\approx h_r S (T_s- T_{ext}) \quad \mbox{ avec } h_r = 4 \epsilon \sigma T_{ext}^3 
+$$
+
+Dans les cas où une surface échange de l'énergie avec son milieu environnant à la fois par convection et rayonnement, on a la loi : 
+$$
+\Phi_{s\rightarrow ext} =  h S (T_s- T_{ext}) \quad \mbox{ avec } h = h_{conv} + h_r 
+$$
+Ici $h$ est le coefficient de convection-rayonnement. La résistance thermique équivalente vaut :
+$R_{conv+r} = \frac{1}{h S}$
+
+Exemple : béton (ou autre matériau de construction) avec $T_{ext} \approx 273 K $ : $h_{conv} \approx 4 W/K/m^2$ (convection libre) : $h_r \approx 6 W/m^2/K$, donc $h \approx 10 W/m^2/K$.
+
+
+\section{Utilisation de l'analogie électrique}
+
+
+
+Le concept de "résistance thermique" permet, par analogie avec les lois de l'électricité, de modéliser les problèmes d'isolation thermique à l'aide réseaux de résistances équivalents. Retenons que l'analogie est valable uniquement lorsque les différences de $T$ sont faibles (rayonnement linéarisé) et en régime stationnaire.
+Précisons la signification de deux types de montages :
+
+\begin{description}
+\item{Montage en série :} la paroi est constituée de plusieurs couches de matériaux que la chaleur traverse successivement. Le flux est la même a travers chaque strate, le $\Delta T$ total est la somme des $\Delta T$ a travers chaque strate.
+La résistance équivalente est : $R_{eq} = \sum R$.
+
+ \item{ Montage en parallèle :} la paroi est divisée en plusieurs parties de structure différente. Le $\Delta T$ entre les deux faces est le même partout, le flux total est la somme des flux à travers chaque élément de paroi.
+La résistance équivalente est : $(1/R_{eq}) = \sum (1/R)$.
+\end{description}
+
+\paragraph{Remarque : } Dans l'analogie électrique la géométrie réelle n'a aucune importance. Deux fenêtres séparant une pièce du milieu extérieur sont "en parallèle" qu'elles soient situées côte à côte ou sur des murs opposés !
+
+
+
+\clearpage
+
+\section{Conduction instationnaire}
+
+Le problème de la conduction instationnaire dans un matériau homogène (sans sources de chaleur interne) est gouverné par l'E.D.P. $\partial T/\partial t = a \nabla^2 T$, dont la résolution dans le cas général nécessite des méthodes mathématiques avancées (hors programme). Dans cette section on s'intéresse uniquement aux cas où la température est uniforme à chaque instant : $T(x,t) = T(t)$ (hypothèse du milieu {\em thermiquement mince}). Il faut cependant préciser sous quelles hypothèses cette approximation est justifiée.
+
+
+\subsection{Temps caractéristique d'uniformisation thermique}
+
+\paragraph{Définition} 
+
+Considérons un objet solide de dimension caractéristique $L$ dont la surface est maintenue à une température $T_s$. Par analyse dimensionnelle, on peut définir  le {\em temps caractéristique d'uniformisation thermique} $\tau_u = L^2 /a$ où $a$ l'effusivité thermique. Cette échelle de temps est celle au bout de laquelle la température s'uniformise : si $t \gg \tau$ alors $T(x,,y,z,t) \approx T_s$ quelque soit la condition initiale $T(x,y,z,0)$.
+
+\paragraph{Corollaire :} si $T_s(t)$ évolue selon une échelle de temps grande devant $\tau_u$, alors on peut supposer qu'a tout instant $T(x,y,z,t) \approx T_s(t) \equiv T(t)$ : la température est instationnaire mais uniforme.
+
+  
+\paragraph{Démonstration simplifiée à travers un problème modèle} 
+Considérons un matériau homogène, monodimensionel, d'épaisseur $L$, de température de surface $T_s$ imposée. La température $T(x,t)$ est gouvernée par l'E.D.P $\partial T/\partial t = a \partial^2 T/ \partial x^2$, dont on peut trouver une solution particulière de la forme suivante :
+  
+$$T(x,t) = T_s + A e^{-\pi^2 t/\tau_u} \cos ( \pi x/L) $$
+  
+Dans cette solution, si $t > \tau_u$, alors $|T(x,t)- T_s| \le e^{-\pi^2} A \approx 5 \cdot 10^{-5} A$.   
+
+\subsection{Temps caractéristique d'échange thermique}  
+ 
+Considérons un objet thermiquement mince (hypothèse a justifier a posteriori) de surface $S$, échangeant de la chaleur avec le milieu extérieur (de température $T_{ext}$) par convection/rayonnement. Le bilan d'enthalpie permet d'écrire :
+
+ $$ \frac{d H}{dt} = C_p  \frac{d T}{dt} = - h S (T - T_{ext}) $$
+La solution est : 
+$T(t)  = T_{ext} + K e^{-t / \tau_e}$, 
+où $\tau_e = C_p / (h S)$ est le {\em temps caractéristique d'échange thermique}, et la constante $K$ 
+dépend des conditions initiales. 
+  
+\subsection{Vérification a posteriori de l'hypothèse du milieu thermiquement mince}  
+ 
+D'après le corollaire énoncé plus haut, l'hypothèse est justifiée si :
+
+$$
+Bi = \frac{\tau_u}{\tau_e} \equiv \frac{h L}{k} \ll 1
+$$
+
+Le nombre $Bi$ (sans dimensions) est le {\em nombre de Biot}. En on pourra considérer que l'hypothèse est valable si $Bi\le0.1$. Dans le cas contraire, la température n'est pas uniforme.
+
+ Analogie : l'ile des vacances...  
+  
+  
+  

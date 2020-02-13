@@ -1,0 +1,605 @@
+
+
+\chapter{Machines thermodynamiques}
+
+{\em 
+Objectifs du chapitre :  Savoir modéliser le fonctionnement d'une machine thermique. Connaitre le théorème de Carnot prédisant le rendement maximal d'une machine, et comprendre ses conséquences pratiques sur le fonctionnement d'une machine réelle. Savoir calculer le rendement de cycles simples décrit par un gaz parfait (en système fermé).
+}
+
+%\section{Introduction}
+
+
+
+
+\section{Modélisation théorique et rendement}
+
+\subsection{Introduction} 
+
+
+
+Dans une machine thermodynamique, un système thermodynamique donné (en général une masse de gaz) subit des successions de transformations incluant :
+
+-  Des échanges de travail mécanique : détentes et compressions.
+
+-  Des échanges de chaleur au contact d'un (ou plusieurs) milieux extérieurs.
+
+- Eventuellement des changements de phase (évaporation, liquéfaction).
+
+- Eventuellement de la production de chaleur interne  (moteurs à combustion interne).
+
+- Eventuellement un échange de travail électrique.
+
+
+%Il existe deux types principaux de machines : les moteurs (but : produire du travail) et les machines thermiques (but : générer un échange de chaleur d'un milieux froid vers un milieu chaud).
+
+
+De nombreuses machines fonctionnent de manière cyclique ou peuvent être modélisées comme telles.
+
+On a vu au chapitre 1 les deux énoncés historiques du second principe :
+
+- Une machine monotherme (échangeant du travail et de la chaleur avec un milieu extérieur isotherme) 
+ne peut fonctionner comme un moteur (énoncé historique de Thomson ; TD7).
+
+- Une machine échangeant uniquement de la chaleur avec son environnement ne peut pas être une machine thermique (énoncé historique de Clausius).
+
+Ces deux énoncés imposent des contraintes au rendement des machines. Peut-on préciser ces contraintes dans un cadre plus général ?
+
+\subsection{Machine cyclique ditherme} 
+
+Pour pouvoir fonctionner comme un moteur ou une machine thermique, le modèle minimal est donc un système qui peut échanger avec son environnement : 
+
+-  Une quantité de chaleur $Q_c$ avec un milieu extérieur chaud de température $T_c$ ;
+-  Une quantité de chaleur $Q_f$ avec avec un milieu extérieur froid de température $T_f$ ;  
+-  Un travail $W$ avec l'extérieur 
+
+($Q_f, Q_c$ et $W$ sont comptés algébriquement avec la convention habituelle).
+
+Le bilan d'énergie au cours d'un cycle est : 
+
+$\Delta_{cycle} U = W + Q_f + Q_c = 0$.
+
+Pour un moteur $W <0$, $Q_c>0$ ; $Q_f<0$ ; pour une machine thermique $W >0$, $Q_c<0$ ; $Q_f>0$.
+
+\subsection{Rendement}
+
+Le rendement (appelé aussi coefficient de performances pour les machines thermiques) est défini par "$\eta = $  Ce qu'on gagne " / " Ce qu'on paye". Cette définition est à adapter à chaque type de machine :
+
+{\bf Cas d'un moteur} :  $\eta =  -W / Q_c$.
+
+{\bf Cas d'une machine frigorifique} : $ COP_{FRIGO} =  Q_f / W $.
+
+{\bf Cas d'un pompe à chaleur} :   $ COP_{PAC} =  - Q_c / W $.
+
+
+%Dans les deux derniers cas le rendement est également appelé {\em Coefficient de Performances}.
+
+\section{Cycle de Carnot et Théorème de Carnot}
+
+\subsection{Cycle de Carnot}
+Le cycle de Carnot est un cycle théorique dans lequel un gaz parfait subit les 4 étapes suivantes :
+
+- Etape $1\rightarrow 2$ :  Compression isotherme à la température $T_f$.
+
+- Etape $2\rightarrow 3$ : Compression adiabatique réversible entre $T_f$ et $T_c$.
+
+ - Etape $3\rightarrow 4$ :  Détente isotherme à la température $T_c$.
+
+-  Etape $4\rightarrow 1$ : Détente adiabatique réversible entre $T_c$ et $T_f$.
+
+\paragraph{Etude énergétique du cycle } : 
+Les chaleurs $Q_f$ et $Q_c$ sont échangées respectivement durant les étapes et $1\rightarrow 2$$3\rightarrow 4$, et on a : $Q_f= Q_{1\rightarrow 2} = n R T_f \ln (V_2/V_1) $ et $Q_c= Q_{3\rightarrow 4} = n R T_f \ln (V_4/V_3)$. 
+
+Le travail net échangé au cours du cycle vaut $W = (W_{1\rightarrow 2}+W_{2\rightarrow 3}+W_{3\rightarrow 4}+W_{4\rightarrow 1})  = - (Q_c + Q_f)$.
+
+Enfin l'étude des étapes $2\rightarrow 3$ et $4\rightarrow 1$ permet de montrer que : $V_2/V_1 =  V_3/V_4$.
+
+\paragraph{Rendement du cycle } : 
+
+En combinant les calculs précédent, on trouve que le rendement du cycle de Carnot,  ou "rendement réversible",  vaut :  
+$$
+\eta_{rev} = \frac{-W}{Q_c} = 1 - \frac{T_f}{T_c} 
+$$
+
+Le cycle étant réversible, on peut le faire fonctionner dans l'autre sens ($1 \rightarrow 4  \rightarrow 3  \rightarrow 2  \rightarrow 1$). Les coefficients de performances correspondants valent :
+
+$$COP_{frigo,rev} = \frac{T_f}{T_c-T_f} = \frac{1}{\eta_{rev}} - 1$$ 
+
+$$COP_{PAC,rev} = \frac{T_c}{T_c-T_f} = \frac{1}{\eta_{rev}}$$ 
+
+
+\subsection{Théorème de Carnot}
+
+{\em Toute machine réelle a un rendement (ou COP) inférieur à celui du cycle de Carnot fonctionnant entre les mêmes températures extrêmes.}
+
+
+\paragraph{Démonstration dans le cas d'un moteur}, en suivant le raisonnement original de Carnot : par l'absurde.
+
+Supposons qu'un moteur $A$ produit, en consommant une chaleur $Q_{c,A}$, un travail $|W| = \eta_A Q_{c,A}$ avec $\eta_A > \eta_{rev}$. Utilisons le travail produit pour alimenter une machine de Carnot fonctionnant en mode pompe à chaleur. Celle-ci transmet une chaleur $Q_{c,B} = -COP_{PAC,rev} |W|$ au milieu chaud. La chaleur totale reçue par le milieu chaud de la part du système $(A+B)$ vaut donc 
+$Q_{c,A} + Q_{c,B}  = ( 1 - \eta_A/\eta_{rev}) Q_{c,A} <0$. Le milieu chaud a donc reçu de la chaleur dans un processus sans échange de travail ; cela contredit l'énoncé historique de Clausius du second principe.  
+
+
+
+\section{Exemples de cycles moteurs}
+
+\subsection{Cycle de Bau de Rochas}
+
+Le cycle de Bau de Rochas, aussi appelé cycle d'Otto, modélise le fonctionnement des moteurs à essence. Il est constitué des étapes suivantes :
+
+- Etape $1\rightarrow 2$ : Compression adiabatique réversible entre $(P_1,V_1,T_1=T_f)$ et 
+$(P_2,V_2=V_1/\tau_V,T_2)$
+
+ - Etape $2\rightarrow 3$ :  Echauffement isochore jusqu'à $(P_3,V_3=V_2,T_3=T_c)$ .
+ 
+-  Etape $3\rightarrow 4$ : Détente adiabatique réversible jusqu'à $(P_4,V_4=V_1,T_4)$.
+
+- Etape $4\rightarrow 1$ :  refroidissement isochore jusqu'à retour aux conditions initiales.
+
+Le calcul du rendement de ce cycle donne : $\eta_{BdR} = 1 - \tau_V^{1-\gamma}$ avec $\tau_V = V_1/V_2$.
+
+Commentaires : La modélisation sous forme d'un cycle parcouru par un système de gaz unique est discutable. D'une part au cours de la phase de combustion (2->3) l'échauffement est du à une combustion interne et non à un échange de chaleur avec une source chaude (il y a donc modification de composition chimique !). D'autre part, l'étape 4->1 de refroidissement isochore est en fait un échappement suivi d'une admission : on change de fluide ! 
+
+
+\subsection{Cycle Diesel}
+
+La différence, par rapport au cas précédent, concerne la modélisation de la seconde étape correspondant à la combustion. Dans le moteur diesel la combustion a lieu de manière spontanée sans allumage, et s'effectue de manière isobare.
+
+On montre (TD) que le rendement est donné par :
+$$
+\eta_{D} = 1 - \eta_V^{1-\gamma} \frac{r_c^\gamma - 1}{\gamma ( r_c -1 )}
+$$
+
+où $\tau_V = \frac{V_1}{V_2}$ est le taux de compression et $r_c=\frac{V_3}{V_2}$ est le taux de d\'etente pr\'ealable.
+
+
+A $\tau_V$ fix\'e, le rendement du cycle est inférieur à celui du cycle de Bau de Rochas ; cependant une moteur de ce type permet d'atteindre des taux de compressions plus importants.
+
+
+\subsection{Cycle de Stirling}
+
+
+
+%\subsection{Cycle de Brayton}
+
+%\section{Exemples de cycles frigorifiques}
+
+%\subsection{Cycle de Brayton inversé ou frigo à gaz}
+
+%\subsection{Cycles frigorifiques avec changement de phase}
+
+
+
+\chapter{L'entropie}
+
+{\em 
+Objectifs du cours : Introduire l'entropie, son utilité et sa signification physique. Exprimer l'énoncé mathématique du second principe, et son lien avec les énoncés historiques 
+}
+
+\section{Bilan du cours}
+
+\subsection{Réexamen des deux principes de la thermodynamique}
+
+Le premier principe de la thermodynamique explique que travail et chaleur sont deux modalités d'échanges avec l'extérieur d'une quantité physique unique : l'énergie.
+Dans ce cours nous avons appris à utiliser l'énoncé mathématique de ce principe, 
+qui formalise le bilan d'énergie entre un système et le milieu extérieur au cours d'une transformation.
+
+Le second principe est quand à lui un principe d'évolution qui précise qu'en général les transformations
+d'un système sont irréversibles, ce qui signifie qu'elles ne se produisent {\em spontanément} que du passé vers le futur. Nous avons pour l'instant énoncé ce principe de manière qualitative sous ses formes historiques (chap. 1). Nous avons par ailleurs longuement discuté le cas idéal des transformations {\em réversibles}, cas particulièrement important car si de telles transformations sont combinées pour constituer un {\em cycle}, celui-ci a le meilleur rendement possible (chap. 8).
+
+Il est temps maintenant de donner un énoncé mathématique plus rigoureux à ce second principe ! 
+Revenons tout d'abord sur les points qui restent à éclaircir.
+
+\subsection{Irréversibilité et dissipation}
+
+Pour mieux cerner la nature de l'irréversibilité, revenons sur deux situations génériques "fondamentalement irréversibles" déjà rencontrées dans les chapitres précédents :
+
+\paragraph{Situation \#1 :  irréversibilité mécanique} 
+
+Il s'agit de la {\em détente de Joule - Gay Lussac} dont on rappelle le protocole : un gaz est initialement contenu dans un récipient de volume $V_i$, On ouvre une vanne débouchant dans un second récipient initialement parfaitement vide.  {\em Spontanément}, le gaz se met en mouvement  pour  venir occuper tout le volume disponible. On note $V_f$ le volume final occupé par le gaz. 
+%(correspondant aux deux récipients).
+ 
+Dans cette détente, le système est supposé {\em isolé mécaniquement et thermiquement} ($Q=W=0$).
+Elle est {\em irréversible mécaniquement} car la pression est momentanément inhomogène, ce qui génère des écoulements ; on a donc transitoirement apparition d'une énergie cinétique macroscopique, mais celle-ci est finalement convertie en énergie interne à cause des frottements, etc... On parle à ce sujet de {\em dissipation mécanique} : l'énergie dissipée est en quelque sorte "gaspillée" car elle aurait pu être exploitée pour fournir du travail (par exemple en installant une turbine dans le goulot).
+
+\paragraph{Situation \#2 : irréversibilité thermique}
+
+Considérons deux objets, initialement à l'équilibre thermique et de températures respectives $T_1$ et $T_2$ avec $T_1>T_2$.
+On les met en contact  par l'intermédiaire d'un milieu conducteur de la chaleur 
+(par exemple, une plaque d'épaisseur $e$ et de résistance thermique $R = e / k S$). 
+{\em Spontanément}, un flux de chaleur $\Phi = (T_1-T_2)/R$ apparaît à travers le matériau séparant les deux objets, du coté le plus chaud vers le coté le plus froid.
+ 
+Comme dans la situation précédente, le système considéré (constitué par les deux objets et la paroi séparatrice) est {\em isolé mécaniquement et thermiquement} ($Q=W=0$). L'évolution est 
+{\em irréversible thermiquement} car la température est inhomogène (en l'occurrence elle varie spatialement dans l'épaisseur de la paroi séparatrice ; cf. chap. 6.B.5 ). Notons qu'il y a également dans cette situation un certain "gaspillage d'énergie" car une partie de la chaleur aurait pu être convertie en travail si on avait remplacé la paroi conductrice par une machine thermique. On parle donc à ce sujet de {\em dissipation thermique}.
+
+
+
+\comment{
+Considérons un récipient parfaitement calorifugé, séparé en deux par une paroi rigide mais conductrice de la chaleur, de résistance thermique $R = e / k S$. Initialement, la moitié gauche est occupé par un gaz à la température $T_1$ et la moitié droite par un gaz de température $T_2$ avec $T_1>T_2$.
+ {\em Spontanément}, un flux de chaleur $\Phi = (T_1-T_2)/R$ apparaît à travers la paroi conductrice séparant les deux gaz, du coté le plus chaud vers le coté le moins chaud.
+ 
+Comme dans la situation précédente, le système considéré (constitué par les deux masses de gaz et la paroi séparatrice) est {\em isolé mécaniquement et thermiquement} ($Q=W=0$). L'évolution est 
+{\em irréversible thermiquement} car la température est inhomogène (en l'occurrence elle varie spatialement dans l'épaisseur de la paroi séparatrice ; cf. chap. 6.B.5 ). Notons qu'il y a également dans cette situation un certain "gaspillage d'énergie" car une partie de la chaleur aurait pu être convertie en travail si on avait remplacé la paroi conductrice par une machine thermique. On parle donc à ce sujet de {\em dissipation thermique}.
+}
+
+\subsection{Travail, chaleur, et choix des variables}
+
+Pour un système simple, le travail reçu de l'extérieur est relié uniquement aux variation de volume, et admet les expressions simples suivantes (respectivement dans le cas général et le cas réversible) :
+
+$$ 
+\delta W = - P_s dV ; \qquad \delta W_{rev} = - P d V
+$$
+
+Il serait pratique de disposer d'une formule similaire pour la chaleur reçue !
+
+On a fait une tentative dans ce sens au chapitre 3, en exprimant les variation de l'énergie $U$  
+en fonction des variables "naturelles" $(T,V)$. On a écrit la différentielle sous la forme  
+$ dU = C_v dT + (\ell - P) dV$. Pour une évolution réversible $ dU = \delta W_{rev} + \delta Q_{rev}$,
+donc par identification :
+
+ $$\delta Q_{rev}  = C_v dT + \ell dV$$
+ 
+Cependant cette expression n'est pas très satisfaisante pour les raisons suivantes :
+
+
+- Dans cette expression la chaleur est reliée à la fois aux variations de température et de volume, contrairement au travail qui ne dépend que des variations de volume.
+
+- Le sens physique du terme $\ell$ est obscur...
+
+- Cette expression n'est applicable qu'au cas d'une transformation réversible et pas dans le cas général.
+
+\,
+
+D'autre part, on a remarqué au chapitre 3 qu'il existe des relation "cachées" entre les coefficients thermoélastiques et calorimétriques (relations de Clapeyron et de Mayer).... Visiblement il manque quelque chose dans la théorie pour assurer sa cohérence !
+ 
+\section{Entropie et énoncé moderne du second principe}
+
+\subsection{La fonction entropie }
+
+L'entropie est une {\em fonction d'état}, dont l'existence a été postulée par Clausius, qui vérifie les deux propriétés suivantes :
+
+\paragraph{Propriété 1 :} Pour un système {\em isolé } subissant une {\em évolution spontanée} (c.a.d. irréversible), l'entropie totale du système croît au cours du temps, jusqu'à atteindre un maximum caractérisant l'équilibre thermodynamique.
+
+{\em 
+Remarques :
+
+- L'entropie est donc une fonction d'état non conservative (voir déf. de ce terme en annexe A et discussion au chapitre 1).
+
+- Contrairement au premier principe qui ne distingue pas passé et futur, ce principe introduit une "flèche du temps".
+
+- Le principe selon lequel l'équilibre thermodynamique correspond à un maximum d'entropie est à rapprocher du principe de mécanique du point selon lequel un état d'équilibre mécanique (stable) correspond à un minimum d'énergie potentielle : dans le deux cas l'équilibre est un extrémum d'une fonction d'état. 
+}
+
+\paragraph{Propriété 2 :} Pour  système {\em non isolé } recevant une quantité de chaleur $Q$ à travers une frontière de température $T_s$, l'{\em entropie reçue} (c.a.d. la variation d'entropie associée aux échanges avec l'extérieur) vaut $Q/T_s$.
+
+
+
+
+{\em 
+Remarques :
+
+- L'entropie reçue est proportionnelle à $Q$ ; un système recevant (resp. cédant) de la chaleur reçoit (resp. cède) donc aussi de l'entropie.
+
+- Le coefficient $1/T_s$ permet à l'énoncé du second principe de rester cohérent avec le théorème de Carnot (cf. section C.3).
+
+}
+
+\subsection{Enoncé mathématique du second principe}
+
+D'après ce qui précède, dans le cas général, la variation d'entropie est composée de deux termes, une entropie "créée" (propriété 1) et une entropie "reçue" (propriété 2). D'où l'énoncé mathématique :
+
+\paragraph{Pour une évolution générale}
+\footnote{Dans le cas le plus général, l'intégrale dans l'expression de $\Delta S_{\mbox{ \footnotesize reçue}}$ doit être effectuée selon le temps (si $T_s$ varie temporellement) et selon l'espace le long de la frontière (si $T_s$  varie spatialement)}
+
+$$ 
+\Delta  S = \Delta S_{\mbox{ \footnotesize créée}} + \Delta S_{\mbox{\footnotesize reçue}} \mbox{ avec } 
+\Delta S_{\mbox{ \footnotesize créée}} \ge 0 
+\mbox{ et }  \Delta S_{\mbox{ \footnotesize reçue}} = \int \frac{\delta Q}{T_s}  
+$$  
+
+%\paragraph{Pour une évolution générale réversible}
+et dans le cas réversible : 
+$$ 
+\Delta  S =  \int \frac{\delta Q}{T}  
+$$  
+
+
+\paragraph{Pour une évolution élémentaire}\footnote{ La formule correspond au cas ou il n'y a qu'un 
+ unique milieu extérieur de température $T_s$ ; s'il y en a plusieurs numérotés par l'index $i$ alors $d S_{\mbox{ \footnotesize reçue}} = \sum_i  \frac{\delta Q_i}{T_s,i}  $}
+
+$$ 
+d  S = d S_{\mbox{ \footnotesize créée}} + d S_{\mbox{\footnotesize reçue}} \mbox{ avec } 
+d S_{\mbox{ \footnotesize créée}} \ge 0 
+\mbox{ et } d S_{\mbox{ \footnotesize reçue}} = \frac{\delta Q}{T_s}  
+$$  
+
+
+%\paragraph{Pour une évolution générale réversible}
+et dans le cas réversible :
+$$ 
+d  S =  \frac{\delta Q}{T}  
+$$ 
+
+\section{Démonstration des énoncés historiques du second principe}
+
+Nous avons vu précédemment trois énoncés historiques du second principe. Nous sommes maintenant en mesure de montrer qu'ils se déduisent de l'énoncé mathématique moderne :
+
+
+\subsection{Enoncé historique de Clausius}
+
+{\em  "La chaleur ne peut passer spontanément d'un corps froid à un corps chaud". }
+
+
+\paragraph{ Démonstration } :
+
+Il s'agit de la situation générique \#2 étudiée ci-dessus. Formalisons les choses en supposant que la conductivité thermique dans les milieux 1 et 2 est bien supérieure à celle de la cloison séparatrice $\cal S$. Il est donc justifié de supposer qu'à chaque instant la température est uniforme dans chacun des compartiments, mais non uniforme à travers la cloison (elle varie linéairement en fonction de la coordonnée $x$ ; cf. chapitre 6.B.5). On suppose enfin que les milieux 1 et 2 sont de grande dimension (ce sont des "thermostats") de manière à pouvoir considérer que l'échange d'une petite quantité de chaleur $\delta Q$ ne modifie pas leurs températures respectives, ni l'état de la cloison séparatrice, qui fonctionne donc en {\em régime permanent}.
+
+
+
+Ecrivons un bilan d'énergie et d'entropie pour le système constitué par {\em la cloison séparatrice} $\cal S$  :
+
+$$ 
+d U =  \delta Q_{1 \rightarrow S} + \delta Q_{2 \rightarrow S} = 0
+$$
+$$ 
+d S =  \frac{\delta Q_{1 \rightarrow S}}{T_1} + \frac{\delta Q_{2 \rightarrow S}}{T_2}  
++ d S_{\mbox{ \footnotesize créée}} = 0  
+ \mbox{ avec } 
+d S_{\mbox{ \footnotesize créée}} \ge 0 
+$$
+
+On en déduit $ \delta Q_{1 \rightarrow S} \left( \frac{1}{T_1} - \frac{1}{T_2} \right)  \le 0$. Comme $T_1 > T_2$ on en déduit $Q_{1 \rightarrow S} \ge 0$ ; la chaleur va bien du milieu chaud 1 vers le milieu froid 2 (en traversant la cloison séparatrice $\cal S$).
+
+\paragraph{Remarque } :
+
+Cette démonstration montre bien que c'est à l'intérieur de la paroi séparatrice, dans laquelle la température est non uniforme, que de l'entropie est créée. Plus généralement, on peut montrer (cf. cours Mécanique des Milieux Continus L3 et M2) que le terme de création d'entropie est directement lié à l'inhomogénéité de $T$ (dissipation thermique) et aux frottements visqueux dans les écoulements engendrés par l'inhomogénéité de $P$ (dissipation mécanique).  
+
+
+
+
+
+\subsection{Enoncé historique de Thomson}
+
+{\em "Une machine monotherme fonctionnant de manière cyclique ne peut pas être utilisée pour fournir du travail à l'extérieur"
+} 
+
+\paragraph{ Démonstration } :
+
+Supposons que la machine échange au cours d'un cycle un travail $W$ et une chaleur $Q$ avec un milieu extérieur de température uniforme $T_s$.  Ecrivons le bilan des fonctions $U$ et $S$ au cours d'un cycle. 
+Ces fonctions étant des fonctions d'état, la variation au cours d'un cycle est nulle :
+
+
+$$
+\Delta \, U =  Q + W   = 0
+$$
+
+
+$$
+\Delta \, S =  Q/T_s  + \Delta S_{\mbox{\footnotesize créée} } = 0 \quad  \mbox{ avec } \Delta S_{\mbox{\footnotesize créée} } \ge 0.
+$$
+
+On en déduit $Q <0$, et $W >0$. Une telle machine ne peut que recevoir du travail et fournir de la chaleur ! (cf. exercice "Cycle monotherme", TD 7).
+
+
+
+
+\subsection{Théorème de Carnot}
+
+{\em "Le rendement de tout cycle réel est inférieur ou égal à celui du cycle de Carnot"
+} 
+
+\paragraph{ Démonstration } :
+
+Supposons que la machine échange au cours d'un cycle un travail $W$, une chaleur $Q_c$ avec un milieu "chaud" de température $T_c$, et  une chaleur $Q_f$ avec un milieu "froid" de température $T_f$.
+
+Ecrivons le bilan des fonctions $U$ et $S$ au cours d'un cycle. Ces fonctions étant des fonctions d'état, la variation au cours d'un cycle est nulle :
+
+
+$$
+\Delta \, U =  Q_f + Q_c + W   = 0
+$$
+
+
+$$
+\Delta \, S =  Q_f/T_f + Q_c/T_c  + \Delta S_{\mbox{\footnotesize créée} } = 0 \quad  \mbox{ avec } \Delta S_{\mbox{\footnotesize créée} } \ge 0.
+$$
+
+On en déduit  $ Q_f \le  - \frac{T_c}{T_f} Q_c$ et donc  $\eta = \frac{- W}{Q_c} = \frac{Q_c+Q_f}{Q_c} \le \left(1 -  \frac{T_c}{T_f} \right)$.
+
+Notons que ce résultat justifie, a posteriori, l'énoncé de la propriété \#2 de l'entropie énoncée plus haut. La fonction $S$ a en fait été forgée par Clausius pour pouvoir démontrer et généraliser le théorème de Carnot !
+
+
+
+\section{Application aux gaz parfaits}
+
+\subsection{Entropie d'un gaz parfait}
+
+L'expression de l'entropie d'un gaz parfait dans les variables "pratiques" $(T,V)$ s'obtient en combinant les relations suivantes :
+
+$$dU = C_v dT ; \quad d U = -P dV +T dS; \quad PV = nRT$$
+
+On en déduit : 
+
+$$dS = n R \frac{ dV }{V} + C_v \frac{dT }{T}$$
+
+Dans le cas du gaz parfait thermiquement parfait, cette expression s'intègre en :
+$$
+S = n R \ln V + C_v \ln T + cte 
+$$
+
+\paragraph{Remarques } :
+
+- Plusieurs autres choix de variables sont possibles. Le choix "canonique" $S(U,V)$ conduit, sachant que $U = C_v T$, à : $S = n R \ln V + C_v \ln U + cte $
+
+- Sous forme intensive, on peut exprimer l'entropie massique $s$ en fonction du volume massique $\upsilon$ et de la température $T$ : $s = r \ln \upsilon + c_v \ln T + cte $
+
+- Toutes ces expressions sont définies " à une constante près", ce qui n'est pas surprenant car $S$ est une fonction d'état dont seules les variations sont observables.
+
+- On peut  cependant préciser la valeur de cette constante en invoquant le "troisième principe" qui stipule que l'entropie s'annule à température nulle. Cependant lorsque $T$ tend vers zéro le modèle des gaz parfaits considéré ici cesse d'être valable...
+
+
+
+\subsection{Application : transformation isentropique d'un gaz parfait}
+
+Une évolution {\em isentropique } est une évolution au cours de laquelle $S$ reste constante. Pour un gaz parfait thermiquement parfait on a donc, en utilisant l'identité $nR/C_v = \gamma-1  $ :
+$$ n R \ln V + C_v \ln T =  C_v \ln \left( T V^{\gamma-1} \right) = cte$$
+On reconnait la seconde forme de la relation de Laplace : $T V^{\gamma-1} = cte$, et les deux autres formes s'en déduisent.
+
+Les transformations isentropiques d'un gaz parfait thermiquement parfait obéissent donc à la relation de Laplace. Cela n'est pas étonnant car les transformations adiabatiques réversibles, cas étudiées au chapitre 7, sont un cas particulier de transformation isentropiques...
+
+\subsection{Application : détente de Joule-Gay Lussac d'un gaz parfait}
+ 
+Reconsidérons la détente de Joule-Gay-Lussac (situation fondamentalement irréversible $\# 1$), et supposons que le volume varie entre $V_i$ et $V_f>V_i$. La température ne varie pas (cf. chap. 7); la variation d'entropie vaut donc : $\Delta S = n R \ln (V_f/V_i) > 0$. Le système étant isolé, cette variation d'entropie correspond intégralement à de l'entropie créée ! La création d'entropie est, là aussi, directement  liée aux inhomogénéités de la pression et de la température au cours de la détente.
+
+
+%\section{Application aux changements de phase}
+
+
+\section{Interprétations de l'entropie}
+
+La fonction entropie a initialement été introduite Clausius comme une construction mathématique permettant de donner une expression rigoureuse au second principe. Par la suite plusieurs interprétations en ont été données :
+
+\subsection{Première interprétation : une mesure du désordre microscopique}
+
+Cette interprétation est due à Boltzmann. Elle permet de comprendre qualitativement le fait que l'entropie est une fonction croissante de la température ("plus la température est élevée, plus les particules sont agitées, c.a.d. désordonnées") et du volume ("plus le volume disponible est grand, plus les particules peuvent se répartir dans ce volume de manière désordonnée").
+
+Enfin, le principe d'évolution de l'entropie d'un système isolé peut s'interpréter simplement : "dans un système isolé le désordre augmente jusqu'à atteindre son niveau maximum" est une constatation que l'on peut faire dans de nombreux contextes de la vie courante...
+ 
+
+\paragraph{Remarque :} Boltzmann a formalisé cette interprétation par l'expression $S = k \ln \Omega$ , où $k$ est la constante de Boltzmann et $\Omega$ est le nombre d'états microscopiques compatibles avec l'état macroscopique observé. Cette formule est d'une grande importance théorique ; elle est cependant rarement utilisable en pratique car le décompte des états microscopiques est très délicat.
+
+
+\subsection{Seconde interprétation : une mesure de l'information}
+
+Cette interprétation est due en partie à Shannon qui s'est inspiré de la thermodynamique pour bâtir une théorie de l'information, applicable en particulier à l'informatique. En restant dans le cadre de la thermodynamique, une interprétation fructueuse consiste à voir l'entropie comme une {\em mesure de l'information manquante}.
+
+En effet, L'étude thermodynamique consiste à décrire un système, non pas à l'aide du très grand nombre de variables microscopiques le caractérisant  (positions et vitesses de chaque particules), mais à l'aide d'un petit nombre de {\em variables d'état macroscopiques} ($P,T,V$). Dans ce changement d'échelle une quantité d'information est perdue ; l'entropie est la variable macroscopique qu'il faut rajouter pour quantifier l'information "perdue" dans le passage du micro au macro.
+
+
+
+
+
+
+
+
+
+\section{Liens entre entropie et énergie interne} 
+
+L'énoncé mathématique du second principe pour une évolution élémentaire peut aussi s'écrire :
+
+$$
+\delta Q \le T_s dS  \quad \mbox{(cas général) }; 
+\qquad  \delta Q_{\mbox{\footnotesize rév.}} = T dS \quad \mbox{(cas réversible) }
+$$
+
+Cette formule est à rapprocher de l'expression du travail rappelée au paragraphe A.3. La fonction entropie permet donc de retrouver une symétrie entre les expressions mathématiques du travail et la chaleur ; chacune des deux étant associées à un couple de variables intensive/extensive : ($P,V$) pour le travail et $(T,S)$ pour la chaleur.
+
+On peut donc repréciser l'énoncé mathématique du premier principe, de deux manières différentes :
+
+\paragraph{ Première expression : bilan d'énergie dans le cas général }
+
+$$
+dU = \delta W + \delta Q \le  - P_s dV + T_s dS
+$$
+
+Remarquons le signe $"\le"$ dans cette expression : à variation de volume et d'entropie données, la variation d'énergie est plus faible que celle que l'on aurait pour une évolution réversible (pour laquelle le signe devinent "$=$"). Il y a donc une quantité d'énergie "dissipée" au cours de toute évolution irréversible...
+
+
+\paragraph{Seconde expression : différentielle de l'énergie interne $U(V,S)$ } 
+
+
+$$
+dU =   - P dV + T dS
+$$
+
+Cette expression peut s'interpréter de deux manières différentes :
+
+- C'est tout d'abord le cas particulier de l'expression précédente dans le cas d'une évolution réversible : 
+$ dU = \delta  W_{\mbox{\footnotesize rév.}} + \delta  Q_{\mbox{\footnotesize rév.}}$.  Les deux termes de l'expression peuvent alors s'interpréter en tant "travail réversible" et "chaleur réversible".
+
+- D'autre part, cette expression peut également être interprétée comme la {\em différentielle} de la fonction $U$ dans le choix de variables ($V,S$). La fonction $U$ étant une {\em fonction d'état}, cette expression est donc en réalité valable {\em dans le cas général} et pas uniquement dans le cas d'une transformation réversible. (par contre si l'évolution n'est pas réversibles les deux termes $-PdV$ et $TdS$ ne peuvent pas être interprétés séparément comme du travail et de la chaleur).
+
+
+\paragraph{Formalisation}
+
+Le choix de variables $(V,S)$ permet donc d'exprimer la différentielle de la fonction $U$ de la manière la plus satisfaisante. On appelle ce choix les {\em variables canoniques de la fonction $U$}, par opposition aux {\em variables naturelles} $(V,T)$ qui conduisaient à des difficultés.
+
+La relation $U(V,S)$ (qui peut aussi s'exprimer sous la forme $S(U,V)$) constitue en fait la {\em relation fondamentale } de la thermodynamique reliant les trois grandeurs extensives caractérisant un système fermé, a partir de laquelle on peut construire une théorie rigoureuse de la thermodynamique (cf. programme de L3).
+
+Par identification avec la définition générale de la différentielle sous la forme  $dU = (\partial U/\partial V)_S dV +  (\partial U/\partial S)_V dS$, on peut écrire les deux relations importantes suivantes :
+
+ $$ T = \displaystyle \left. \frac{\partial U}{\partial S} \right|_V$$
+ $$ P = - \displaystyle \left. \frac{\partial U}{\partial V} \right|_S$$
+ 
+Ces deux relations peuvent être considérées, dans un formalisme rigoureux basé sur la relation fondamentale $U(V,S)$ (cf. cours L3), comme la définition des fonctions intensives $P$ et $V$.
+
+
+Enfin l'identité $\partial^2 U/\partial V\partial S = \partial^2 U/\partial S\partial V$ conduit à l'expression suivante, appelée  {\em Relation de Maxwell} associée à l'énergie $U$ :
+
+$$
+ \displaystyle \left. \frac{\partial T}{\partial V} \right|_S = -  \displaystyle \left. \frac{\partial P}{\partial S} \right|_V
+$$
+
+
+
+\section{Fonctions d'état, et applications}
+
+\subsection{Enthalpie $H(P,S)$}
+
+On a déjà rencontré l'enthalpie, définie par $H = U+PV$, et cherché à exprimer sa différentielle dans les "variables naturelles" $(T,P)$. Celle-ci prend une forme plus satisfaisante si l'on choisit les  "variables canoniques" $(P,S)$. Dans ce choix de variables la différentielle de l'enthalpie s'exprime par :
+
+$$ dH = V dP + T dS$$
+
+et la	relation de Maxwell associée est :
+
+$$
+ \displaystyle \left. \frac{\partial T}{\partial P} \right|_S =  \displaystyle \left. \frac{\partial V}{\partial S} \right|_P
+$$
+
+
+On peut définir deux autres fonctions d'état, "cousines" de l'énergie interne et de l'enthalpie :
+
+\subsection{Energie libre $F(V,T)$}
+
+L'énergie libre est définie par $F = U-TS$, et admet pour  "variables canoniques" $(V,T)$. Sa différentielle s'exprime par :
+
+$$ dF = -P dV - S dT$$
+
+et la relation de Maxwell associée est :
+
+$$
+ \displaystyle \left. \frac{\partial S}{\partial V} \right|_T =  \displaystyle \left. \frac{\partial P}{\partial T} \right|_V
+$$
+
+\subsection{Enthalpie libre $G(P,T)$}
+
+L'enthalpie libre est définie par $G = H-TS = U+PV-TS$, et admet pour  "variables canoniques" $(P,T)$. Sa différentielle s'exprime par :
+
+$$ dH = V dP - S dT$$
+
+et la relation de Maxwell associée est :
+
+$$
+ \displaystyle \left. \frac{\partial S}{\partial P} \right|_T =  - \displaystyle \left. \frac{\partial V}{\partial T} \right|_P
+$$
+
+
+\subsection{Application : relations de Clapeyron}
+
+On a déjà rencontré ces relations au chapitre 3, où elles ont été admises. Celles-ci se démontrent très simplement à l'aide des relations de Maxwell que l'on vient d'énoncer. 
+
+\paragraph{Première relation de Clapeyron :}
+$$ 
+\ell = T \DPP{p}{T}{V}
+$$
+Rappelons que le coefficient $\ell$ provient de l'expression $\delta Q = \ell dV + C_v dT$. Pour une transformation réversible on a : $dS = \delta Q /T =  \frac{\ell}{T} dV + \frac{C_v}{T} dT$. Par identification : $  \displaystyle \frac{\ell}{T} =   \left. \frac{\partial S}{\partial V} \right|_T$. Il ne reste qu'à utiliser la relation de Maxwell associée à la fonction $F$.
+
+\paragraph{Seconde relation de Clapeyron :}
+
+$$
+K = -T \DPP{V}{T}{p} 
+$$
+Celle-ci s'obtient de même à l'aide de la relation de Maxwell associée à la fonction $G$.
+
+
+
+
+

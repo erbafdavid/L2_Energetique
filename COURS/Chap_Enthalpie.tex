@@ -1,0 +1,207 @@
+
+
+
+\chapter{Energie interne et Enthalpie }
+
+
+{\em Objectifs de ce chapitre : 
+
+- Formaliser le bilan d'énergie interne pour un système simple, et savoir l'appliquer aux évolutions isochores.
+
+- Introduire la fonction enthalpie et savoir l'utiliser dans l'étude d'évolutions  monobares.
+
+- Manipuler les coefficients calorimétriques et leurs relations ;
+
+- Introduire les lois d'état énergétiques et la problématique du choix des variables.
+
+}
+
+\vspace{.5cm}
+
+\paragraph{Remarques } :
+
+- Dans ce chapitre et les suivants on néglige les effets du mouvement et de la gravitation 
+(l'énergie mécanique ne  varie pas, le bilan d'énergie se ramène donc à un bilan d'énergie interne).
+
+
+- Dans les applications de ce chapitre on se restreint aux cas où la pression et le volume ne varient pas simultanément ;  le cas général sera vu au chapitre "Détentes et compressions".
+
+ 
+ \paragraph{ Définitions } :
+
+On appelle {\em Loi d'état énergétique}  (parfois appelée également équation d'état thermoénergétique) la relation entre $U$ (ou $H$) et deux variables d'état (plusieurs choix possibles).
+
+Les coefficients issus des dérivées partielles d'une relation énergétique s'appellent les {\em coefficients calorimétriques}. 
+
+\section{L'Energie interne $U$}
+
+Def. Energie interne $U$ (extensive), $u=U/m$ (intensive, massique); $u^{(mol)}=U/n$ (intensive, molaire). Du point de vue phénoménologique, cette fonction est postulée.
+
+
+
+\subsection{Bilan d'énergie interne pour une évolution isochore}
+
+Def. capacité thermique à volume constant $C_v = \DPP{U}{T}{V}$.
+
+Pour une évolution élémentaire {\em isochore} et {\em thermiquement réversible}, on a donc $$d U = C_v d T$$ 
+
+En intégrant cette équation on a :
+
+$$
+\Delta U  = \int C_v dT  \qquad  
+$$ 
+
+
+La fonction $U$ étant une fonction d'état, cette relation est en fait valable POUR TOUTE EVOLUTION ISOCHORE (pas forcément réversible).
+
+Le bilan d'énergie interne pour une évolution isochore s'écrit alors 
+$$
+\Delta U = Q \quad ( + W_u + W_{elec} )
+$$
+
+\subsection{Généralisation : loi d'état $U(T,V)$ [ ou  $u(T,\rho)$] }
+
+Pour des évolutions plus générales, il paraît naturel de rechercher une loi d'état énergétique sous la forme $U(T,V)$ [ ou sous forme intensive $u(T,\rho)$]. 
+
+Différentielle : $dU = C_v dT + ( \ell-P ) d V$ [ou  $d u = c_v dT + (\ell-P) d (1/\rho)$ ] 
+
+Ici $\ell$ s'appelle le coefficient calorimétrique de dilatation isotherme (variation d'énergie interne liée à la variation de volume dans une transformation réversible, autre que le travail de pression) :
+
+$$ 
+\ell = \DPP{U}{V}{T} + P
+$$
+
+Expérimentalement on peut constater que ce coefficient $\ell$ est relié aux coefficients thermoélastiques, par la relation suivante appelée {\em 1ère formule de Clapeyron}\footnote{Ne pas confondre les 
+"formules de Clapeyron" avec la "relation de Clapeyron" 
+(relation relative aux changements de phase, hors programme)}, donc la démonstration est reportée au dernier chapitre.
+$$ 
+\ell = T \DPP{p}{T}{V} = P \, T  \, \beta 
+$$
+
+
+\paragraph{Pour un gaz parfait} on a  $ \ell = P$, la relation $dU = C_v dT$ est dont vraie dans le cas général.  Si de plus $C_v = cte$ (on parle de {\em gaz parfait thermiquement parfait}), on peut en déduire :
+
+$$ U(T,V) = U_0 + C_v (T-T_0)$$% = m (u_0 + c_v (T-T_0) )$$ 
+ 
+
+\paragraph{Pour une phase condensée incompressible} $\ell = \infty$. 
+Le choix de variables $U(T,V)$ n'est donc pas adapté... 
+
+
+\section{L'Enthalpie $H$ }
+
+Def : on appelle {\em Enthalpie} la fonction d'état $H = U +PV$ (qui est définie pour tout état d'équilibre).
+On définit également $h = u + P/\rho$ l'enthalpie massique (intensive).
+
+
+\subsection{Bilan d'enthalpie pour des transformations iso- et monobares}
+
+Pour des transformations {\em isobares} $\delta W = -P dV  = - d (P V)$ ; le travail des forces de pression est {\em conservatif}. Le bilan d'énergie permet donc d'écrire : $d (U + PV) = d H = \delta Q \, [ + \delta W_u + \delta W_{elec}]$. 
+
+
+Def. capacité thermique à volume constant $C_p = \DPP{H}{T}{P}$.
+
+Pour une évolution élémentaire {\em isobare} et {\em thermiquement réversible}, on a donc  
+$$d H = C_p d T$$ 
+
+En intégrant cette équation on a :
+
+$$
+\Delta H  = \int C_p dT 
+$$ 
+
+La fonction $H$ étant une fonction d'état, cette relation est en fait valable POUR TOUTE EVOLUTION MONOBARE.
+
+Le bilan d'enthalpie pour une évolution monobare s'écrit alors :
+
+$$
+\Delta H = Q \quad ( + W_u + W_{elec} )
+$$
+
+
+\subsection{Généralisation : loi d'état $H(T,P)$}
+
+Quand les variables d'état sont $(P,T)$ il paraît  "naturel" de chercher la loi d'état sous la forme $H(T,P)$.
+
+
+Différentielle : $dH = C_p dT + ( K+V) d P$ [ou $dh = c_p dT + ( k+1/\rho) d P$]
+
+
+$K$ (paramètre extensif) s'appelle le coefficient calorimétrique de compression isotherme (variation d'enthalpie liée à la variation de pression, autre que la variation du terme PV ). [On note $k=K/m$ le paramètre intensif massique correspondant.]
+$$ 
+K = \DPP{H}{T}{P} - V ; \quad [ k = \DPP{h}{T}{P} - 1/\rho ]
+$$
+
+Comme pour le cas du coefficient $\ell$, on peut observer que le coefficient $K$ [ou $k$] est relié aux coefficients thermoélastiques. C'est la seconde relation de Clapeyron (démonstration au dernier chapitre) :
+
+$$
+K = -T \DPP{V}{T}{p} = - V \, T \, \alpha \qquad \left[  k =  -T \DPP{1/\rho}{T}{p} = - T/\rho \alpha \right] 
+$$
+
+
+\paragraph{Pour un gaz parfait} on a  $ K = -V$, la relation $dH = C_p dT$ est donc vraie dans le cas général.  Si de plus $C_p$ est constante (gaz parfait thermiquement parfait), on peut en déduire :
+
+$$H(T,P) = H_0 + C_p (T- T_0)$$
+
+\paragraph{Pour une phase condensée incompressible faiblement dilatable} $K \approx 0$ et $V \approx V_0$. Si de plus $C_p$ est constante on peut en déduire : 
+$$H(T,P) = H_0 + C_p ( T-T_0) + V_0 ( P-P_0)$$
+
+
+
+\section{Relations entre $C_p$ et $C_v$}
+
+On appelle {\em indice adiabatique} le rapport des chaleurs spécifiques, noté $\gamma = C_p/C_v$.
+
+Dans le cas général, $C_p$ et $C_v$ sont reliés par la relation de Mayer :
+
+$$
+C_p - C_v = T \DPP{p}{T}{V}  \DPP{V}{T}{P}  = P \, V \, T \, \alpha \, \beta = \frac{T V\alpha^2}{\chi_T}
+$$
+
+Démo dans le dernier chapitre ; pour en savoir plus sur les relations mathématiques entre coefficients thermoélastiques et calorimétriques voir aussi :
+
+ \verb|  http://gte.univ-littoral.fr/workspaces/documents-m-perrot/cours-thermo-theorique/ |
+
+
+
+\paragraph{Pour un gaz parfait}, $C_p - C_v = nR$, d'où on peut tirer les relations classiques :
+$C_p = \gamma nR /(\gamma-1)$ ; $C_v = nR/(\gamma-1)$. Ou bien, en termes de capacités thermiques massiques : $c_p = \gamma r /(\gamma-1)$ ; $c_v = r/(\gamma-1)$. 
+
+
+Pour les gaz les plus courants (air), $\gamma = 1.4$ (cf. chapitre suivant).
+
+
+
+\paragraph{Pour les phases condensées} 
+on trouve expérimentalement que $C_p - C_v \ll C_p$, donc  $\gamma \approx 1$.
+  
+On peut donc dans beaucoup de cas écrire $C_p \approx C_v \approx C$  et ne pas se soucier de savoir si l'évolution s'effectue à pression ou à volume constant.
+
+
+
+%\paragraph{Relations thermodynamiques}
+
+%Expérimentalement on a constaté très tôt (1830) que les coefficients calorimétriques et les coefficients thermoélastiques sont intimement liés.
+%Nous donnons ici les trois relations les plus importantes (qui seront démontrées au dernier chapitre).
+
+%Relation de Mayer 
+
+%$$
+%C_p - C_v = T \DPP{p}{T}{V}  \DPP{V}{T}{P}  = P \, V \, T \, \alpha \, \beta 
+%$$
+
+%Première et seconde relations de Clapeyron (ne pas confondre avec la "formule de Clapeyron" !)
+
+%$$ 
+%k = -T \DPP{V}{T}{p} = - V \, T \, \alpha 
+%$$
+
+%Pour en savoir plus sur les aspects mathématiques :
+
+
+%\paragraph{Cas du gaz parfait : }
+% $C_p - C_v =  m r $ ; $\ell = P$ ; $k = - V$
+
+
+
+
